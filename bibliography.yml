@@ -1,0 +1,1168 @@
+# Bibliography - Hayagriva format for Typst
+# Converted from mathese.bib
+
+cho00synchronizing:
+  type: article
+  title: "Synchronizing a database to improve freshness"
+  author:
+    - Cho, Junghoo
+    - Garcia-Molina, Hector
+  date: 2000
+  page-range: 117-128
+
+cho98efficient:
+  type: article
+  title: "Efficient crawling through URL ordering"
+  author:
+    - Cho, Junghoo
+    - García-Molina, Hector
+    - Page, Lawrence
+  date: 1998
+  parent:
+    type: periodical
+    title: "Computer Networks and ISDN Systems"
+  volume: 30
+  issue: 1-7
+  page-range: 161-172
+
+koehler02web:
+  type: article
+  title: "Web page change and persistence—a four-year longitudinal study"
+  author: Koehler, Wallace
+  date: 2002
+  parent:
+    type: periodical
+    title: "J. Am. Soc. Inf. Sci. Technol."
+  volume: 53
+  issue: 2
+  page-range: 162-171
+
+henzinger99measuring:
+  type: article
+  title: "Measuring index quality using random walks on the Web"
+  author:
+    - Henzinger, Monika R.
+    - Heydon, Allan
+    - Mitzenmacher, Michael
+    - Najork, Marc
+  date: 1999
+  parent:
+    type: periodical
+    title: "Computer Networks"
+  volume: 31
+  issue: 11-16
+  page-range: 1291-1303
+
+broder98technique:
+  type: article
+  title: "A technique for measuring the relative size and overlap of public Web search engines"
+  author:
+    - Bharat, Krishna
+    - Broder, Andrei
+  date: 1998
+  parent:
+    type: proceedings
+    title: "Proceedings of the seventh international conference on World Wide Web 7"
+  page-range: 379-388
+  publisher: Elsevier Science Publishers B. V.
+
+rfc2616:
+  type: web
+  title: "Hypertext Transfer Protocol — HTTP/1.1"
+  author:
+    - Fielding, R.
+    - Gettys, J.
+    - Mogul, J.
+    - Frystyk, H.
+    - Masinter, L.
+    - Leach, P.
+    - Berners-Lee, T.
+  date: 1999
+
+rfc1738:
+  type: web
+  title: "RFC-1738 : Uniform Resource Locators (URL)"
+  author:
+    - Berners, T.
+    - Masinter, L.
+    - Mc Cahill, M.
+  date: 1994
+  url: "http://www.ietf.org/rfc/rfc1738.txt"
+
+killthein:
+  type: web
+  title: "Tout le Web accessible en quelques clics"
+  author:
+    - Guillaume, Jean-Loup
+    - Latapy, Matthieu
+    - Mathieu, Fabien
+  date: 2002
+  url: "http://www.liafa.jussieu.fr/~fmathieu/arbre.php"
+
+abiteboul03adaptative:
+  type: article
+  title: "Adaptive on-line page importance computation"
+  author:
+    - Abiteboul, S.
+    - Preda, M.
+    - Cobena, G.
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Proc. 12th International World Wide Web Conference"
+  page-range: 280-290
+
+adamic01search:
+  type: article
+  title: "Search in Power-Law Networks"
+  author:
+    - Adamic, Lada A.
+    - Lukose, Rajan M.
+    - Puniyani, Amit R.
+    - Huberman, Bernardo
+  date: 2001
+
+adamic01web:
+  type: article
+  title: "The Web's hidden order"
+  author:
+    - Adamic, Lada A.
+    - Huberman, Bernardo A.
+  date: 2001
+  parent:
+    type: periodical
+    title: "Commun. ACM"
+  volume: 44
+  issue: 9
+  page-range: 55-60
+  publisher: ACM Press
+
+adamic99small:
+  type: article
+  title: "The Small World Web"
+  author: Adamic, Lada A.
+  date: 1999
+  parent:
+    type: proceedings
+    title: "Proceedings of the Third European Conference on Research and Advanced Technology for Digital Libraries"
+  page-range: 443-452
+  publisher: Springer-Verlag
+
+bergman00deep:
+  type: web
+  title: "The Deep Web: Surfacing Hidden Value"
+  author: Bergman, Michael K.
+  date: 2000
+  url: "http://www.brightplanet.com/pdf/deepwebwhitepaper.pdf"
+
+bianchini02pagerank:
+  type: web
+  title: "PageRank: A Circuital Analysis"
+  author:
+    - Bianchini, Monica
+    - Gori, Marco
+    - Scarselli, Franco
+  date: 2002
+
+bianchini03inside:
+  type: article
+  title: "Inside pagerank"
+  author:
+    - Bianchini, Monica
+    - Gori, Marco
+    - Scarselli, Franco
+  date: 2003
+  parent:
+    type: periodical
+    title: "ACM Transactions on Internet Technology"
+
+bouklit01methodes:
+  type: report
+  title: "Quelques méthodes de classement des moteurs de recherche basée sur la structure du graphe du web"
+  author: Bouklit, Mohamed
+  date: 2001
+  organization: "Université Montpellier II"
+
+bouklit02analyse:
+  type: article
+  title: "Une analyse de PageRank, une mesure de popularité des pages web"
+  author:
+    - Bouklit, Mohamed
+    - Jean-Marie, Alain
+  date: 2002
+  parent:
+    type: proceedings
+    title: "Actes ALGOTEL'02"
+
+brin98what:
+  type: article
+  title: "What can you do with a Web in your Pocket?"
+  author:
+    - Brin, S.
+    - Motwani, R.
+    - Page, L.
+    - Winograd, T.
+  date: 1998
+  parent:
+    type: periodical
+    title: "Data Engineering Bulletin"
+  volume: 21
+  issue: 2
+  page-range: 37-47
+
+broder00graph:
+  type: article
+  title: "Graph structure in the web"
+  author:
+    - Broder, A.
+    - Kumar, R.
+    - Maghoul, F.
+    - Raghavan, P.
+    - Rajagopalan, S.
+    - Stata, R.
+    - Tomkins, A.
+    - Wiener, J.
+  date: 2000
+  parent:
+    type: proceedings
+    title: "Proc. 9th International World Wide Web Conference"
+  page-range: 309-320
+
+byers02informed:
+  type: article
+  title: "Informed content delivery across adaptive overlay networks"
+  author:
+    - Byers, John
+    - Considine, Jeffrey
+    - Mitzenmacher, Michael
+    - Rost, Stanislav
+  date: 2002
+  parent:
+    type: proceedings
+    title: "Proceedings of the 2002 conference on Applications, technologies, architectures, and protocols for computer communications"
+  page-range: 47-60
+  publisher: ACM Press
+
+cooper02crawling:
+  type: article
+  title: "Crawling on web graphs"
+  author:
+    - Cooper, Colin
+    - Frieze, Alan
+  date: 2002
+  parent:
+    type: proceedings
+    title: "Proceedings of the thirty-fourth annual ACM symposium on Theory of computing"
+  page-range: 419-427
+  publisher: ACM Press
+
+fagin00random:
+  type: article
+  title: "Random walks with 'back buttons' (extended abstract)"
+  author:
+    - Fagin, Ronald
+    - Karlin, Anna R.
+    - Kleinberg, Jon
+    - Raghavan, Prabhakar
+    - Rajagopalan, Sridhar
+    - Rubinfeld, Ronitt
+    - Sudan, Madhu
+    - Tomkins, Andrew
+  date: 2000
+  page-range: 484-493
+
+felber04performance:
+  type: report
+  title: "Performance analysis of peer-to-peer networks for file distribution"
+  author:
+    - Biersack, Ernst W
+    - Rodriguez, Pablo
+    - Felber, Pascal A
+  date: 2005
+  organization: "Institut Eurecom"
+  serial-number: "EURECOM+1371"
+
+gaucher96monopoly:
+  type: web
+  title: "Le Monopoly pour les Nuls"
+  author: Gaucher, Philippe
+  date: 1996
+  url: "http://www.pps.jussieu.fr/~gaucher/monopoly/monopoly.html"
+
+genitrix04histoire:
+  type: web
+  title: "Une histoire de réseaux"
+  author: Genitrix
+  date: 2004
+
+goffman71mathematical:
+  type: article
+  title: "A Mathematical Method for Analyzing the Growth of a Scientific Discipline"
+  author: Goffman, William
+  date: 1971
+  parent:
+    type: periodical
+    title: "J. ACM"
+  volume: 18
+  issue: 2
+  page-range: 173-185
+  publisher: ACM Press
+
+Google98:
+  type: web
+  title: "http://www.google.com/"
+  author: Google
+  date: 1998
+
+gummadi02measurement:
+  type: article
+  title: "A measurement study of Napster and Gnutella as examples of peer-to-peer file sharing systems"
+  author:
+    - Gummadi, P. Krishna
+    - Saroiu, Stefan
+    - Gribble, Steven D.
+  date: 2002
+  parent:
+    type: periodical
+    title: "SIGCOMM Comput. Commun. Rev."
+  volume: 32
+  issue: 1
+  page-range: 82
+
+Haveliwala99efficient:
+  type: report
+  title: "Efficient computation of PageRank"
+  author: Haveliwala, T.
+  date: 1999
+  organization: "Computer Science Department, Stanford University"
+
+huberman00competitive:
+  type: report
+  title: "The Competitive Dynamics Of Web Sites"
+  author:
+    - Maurer, Sebastian M.
+    - Adar, Eytan
+    - Huberman, Bernardo A.
+  date: 2000
+  organization: "Society for Computational Economics"
+
+huberman97strong:
+  type: article
+  title: "Strong Regularities in World Wide Web Surfing"
+  author:
+    - Huberman, Bernardo A.
+    - Pirolli, Peter L. T.
+    - Pitkow, James E.
+    - Lukose, Rajan M.
+  date: 1998
+  parent:
+    type: periodical
+    title: "Science"
+  volume: 280
+  issue: 5360
+  page-range: 95-97
+
+kamvar03extrapolation:
+  type: article
+  title: "Extrapolation methods for accelerating PageRank computations"
+  author:
+    - Kamvar, S.
+    - Haveliwala, T.
+    - Manning, C.
+    - Golub, G.
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Proceedings of the Twelfth International World Wide Web Conference"
+
+kamvar-exploiting:
+  type: web
+  title: "Exploiting the Block Structure of the Web for Computing PageRank"
+  author:
+    - Kamvar, Sepandar
+    - Haveliwala, Taher
+    - Manning, Christopher
+    - Golub, Gene
+  date: 2003
+
+karlin01web:
+  type: article
+  title: "Web Search via Hub Synthesis"
+  author: Karlin, Anna R.
+  date: 2001
+  parent:
+    type: proceedings
+    title: "Proceedings of the 4th International Workshop on Approximation Algorithms for Combinatorial Optimization Problems"
+  page-range: 6
+  publisher: Springer-Verlag
+
+Kleinberg98:
+  type: article
+  title: "Authoritative Sources in a Hyperlinked Environment"
+  author: Kleinberg, J.M.
+  date: 1998
+  parent:
+    type: proceedings
+    title: "Proceedings of the Ninth Annual ACM-SIAM Symposium on Discrete Algorithms"
+  page-range: 668-677
+
+kumar00web:
+  type: article
+  title: "Stochastic models for the web graph"
+  author:
+    - Kumar, Ravi
+    - Raghavan, Prabhakar
+    - Rajagopalan, Sridhar
+    - Sivakumar, D.
+    - Tomkins, Andrew
+    - Upfal, Eli
+  date: 2000
+  parent:
+    type: proceedings
+    title: "Proceedings of the IEEE Symposium on Foundations of Computer Science"
+
+litvak04decomposition:
+  type: report
+  title: "Decomposition of the Google PageRank and Optimal Linking Strategy"
+  author:
+    - Avrachenkov, Konstantin
+    - Litvak, Nelly
+  date: 2004
+  organization: "INRIA"
+  serial-number: "RR-5501"
+
+mathieu01structure:
+  type: article
+  title: "Structure supposée du graphe du Web"
+  author: Mathieu, Fabien
+  date: 2001
+  parent:
+    type: proceedings
+    title: "Première journée Graphes Dynamiques et Graphes du Web"
+
+mathieu02structure:
+  type: report
+  title: "Structure intrinsèque du web"
+  author:
+    - Mathieu, Fabien
+    - Viennot, Laurent
+  date: 2002
+  organization: "INRIA"
+  serial-number: "RR-4663"
+  url: "http://www.inria.fr/rrrt/rr-4663.html"
+
+mathieu03aspects:
+  type: article
+  title: "Aspects locaux de l'importance globale des pages web"
+  author:
+    - Mathieu, Fabien
+    - Viennot, Laurent
+  date: 2003
+  parent:
+    type: proceedings
+    title: "5es rencontres francophones sur les Aspects Algorithmiques des Télécommunications (ALGOTEL'2003)"
+
+mathieu03effet:
+  type: article
+  title: "Effet de la touche Back dans un modèle de surfeur aléatoire : application à PageRank"
+  author:
+    - Bouklit, Mohamed
+    - Mathieu, Fabien
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Journées Francophones de la Toile 2003"
+
+mathieu03local:
+  type: article
+  title: "Local Structure in the Web"
+  author:
+    - Mathieu, Fabien
+    - Viennot, Laurent
+  date: 2003
+  parent:
+    type: proceedings
+    title: "12th international conference on the World Wide Web"
+
+lawrence99accessibility:
+  type: article
+  title: "Accessibility of Information on the Web"
+  author:
+    - Lawrence, Steve
+    - Giles, C. Lee
+  date: 1999
+  parent:
+    type: periodical
+    title: "Nature"
+  volume: 400
+  issue: 6740
+  page-range: 107-109
+
+lawrence98searching:
+  type: article
+  title: "Searching the World Wide Web"
+  author:
+    - Lawrence, Steve
+    - Giles, C. Lee
+  date: 1998
+  parent:
+    type: periodical
+    title: "Science"
+  volume: 280
+  page-range: 98-100
+
+mathieu04effect:
+  type: article
+  title: "The effect of the back button in a random walk: application for pagerank"
+  author:
+    - Mathieu, Fabien
+    - Bouklit, Mohamed
+  date: 2004
+  parent:
+    type: proceedings
+    title: "Alternate track papers & posters of the 13th international conference on World Wide Web"
+  page-range: 370-371
+  publisher: ACM Press
+
+mathieu04local:
+  type: report
+  title: "Local Aspects of the Global Ranking of Web Pages"
+  author:
+    - Mathieu, Fabien
+    - Viennot, Laurent
+  date: 2004
+  organization: "INRIA"
+  serial-number: "RR-5192"
+  url: "http://www.inria.fr/rrrt/rr-5192.html"
+
+mathieu04file:
+  type: report
+  title: "File Sharing in P2P: Missing Block Paradigm and Upload Strategies"
+  author:
+    - Mathieu, Fabien
+    - Reynier, Julien
+  date: 2004
+  organization: "INRIA"
+  serial-number: "RR-5193"
+  url: "http://www.inria.fr/rrrt/rr-5193.html"
+
+monopoly:
+  type: web
+  title: "Probabilities in the Game of Monopoly"
+  author: Collins, Truman
+  url: "http://www.tkcs-collins.com/truman/monopoly/monopoly.shtml"
+
+Page98:
+  type: report
+  title: "The PageRank Citation Ranking: Bringing Order to the Web"
+  author:
+    - Page, L.
+    - Brin, S.
+    - Motwani, R.
+    - Winograd, T.
+  date: 1998
+  organization: "Computer Science Department, Stanford University"
+  url: "http://google.stanford.edu/~backrub/pageranksub.ps"
+
+raghavan03representing:
+  type: web
+  title: "Representing web graphs"
+  author:
+    - Raghavan, S.
+    - Garcia-Molina, H.
+  date: 2003
+
+sherman01invisible:
+  type: book
+  title: "The Invisible Web: Uncovering Information Sources Search Engines Can't See"
+  author:
+    - Sherman, Chris
+    - Price, Gary
+  date: 2001
+  publisher: "Independent Publishers Group"
+
+sheynin88markov:
+  type: article
+  title: "A A. Markov's Work on Probability"
+  author: Sheynin, O. B.
+  date: 1988
+  parent:
+    type: periodical
+    title: "Archive for History of Exact Science"
+  volume: 39
+  page-range: 337-377
+
+stewart96monopoly:
+  type: article
+  title: "Monopoly revisited"
+  author: Stewart, Ian
+  date: 1996
+  parent:
+    type: periodical
+    title: "Scientific American"
+  volume: 175
+  page-range: 116-119
+
+sullivan00invisible:
+  type: web
+  title: "Invisible Web Gets Deeper"
+  author: Sullivan, Danny
+  date: 2000
+  url: "http://searchenginewatch.com/sereport/article.php/2162871"
+
+brake97lost:
+  type: article
+  title: "Lost in Cyberspace"
+  author: Brake, D.
+  date: 1997
+  parent:
+    type: periodical
+    title: "New Scientist"
+
+dahn00counting:
+  type: article
+  title: "Counting angels on a pinhead: Critically interpreting web size estimates"
+  author: Dahn, Micheal
+  date: 2000
+  parent:
+    type: periodical
+    title: "Online"
+  volume: 24
+  issue: 1
+  page-range: 35-40
+
+tangente:
+  type: article
+  title: "Le Graphe du Web"
+  author:
+    - Guillaume, Jean-Loup
+    - Latapy, Matthieu
+  date: 2002
+  parent:
+    type: periodical
+    title: "Tangente"
+  volume: "Hors-Série"
+  issue: 12
+  page-range: 12-15
+
+langville04deeper:
+  type: report
+  title: "Deeper inside pagerank"
+  author:
+    - Langville, Amy N.
+    - Meyer, Carl D.
+  date: 2004
+  organization: "NCSU Center for Res. Sci Comp."
+
+randall01link:
+  type: article
+  title: "The link database: Fast access to graphs of the Web"
+  author:
+    - Randall, K.
+    - Stata, R.
+    - Wickremesinghe, R.
+    - Wiener, J.
+  date: 2001
+  parent:
+    type: periodical
+    title: "Research Report 175, Compaq Systems Research Center, Palo Alto, CA"
+
+guillaume02efficient:
+  type: article
+  title: "Efficient and simple encodings for the web graph"
+  author:
+    - Guillaume, J.
+    - Latapy, M.
+    - Viennot, L.
+  date: 2002
+  parent:
+    type: proceedings
+    title: "Proceedings of the 11th international conference on the World Wide Web"
+
+bouklit04cosmoweb:
+  type: article
+  title: "Un modèle gravitationnel du Web"
+  author:
+    - Bennouas, Toufik
+    - Bouklit, Mohamed
+    - de Montgolfier, Fabien
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Actes de ALGOTEL03 5ème Rencontres Francophones sur les aspects Algorithmiques des Télécommunication"
+
+showdown:
+  type: web
+  title: "http://www.searchengineshowdown.com/"
+  author: SearchEngineShowdown
+
+wcp02:
+  type: web
+  title: "Web Characterization Project"
+  author:
+    - O'Neill, Ed
+    - Lavoie, Brian
+    - Bennett, Rick
+    - Dyer, Anya
+    - Worthington, Sarah
+  date: 2002
+  url: "http://wcp.oclc.org"
+
+netcraft04:
+  type: web
+  title: "http://www.netcraft.com/"
+  author: Netcraft
+  date: 2004
+
+eiron04ranking:
+  type: article
+  title: "Ranking the Web Frontier"
+  author:
+    - Eiron, Nadav
+    - McCurley, Kevin S.
+    - Tomlin, John A.
+  date: 2004
+  parent:
+    type: proceedings
+    title: "Proc. 13th International World Wide Web Conference"
+  page-range: 309-318
+
+dill01selfsimilarity:
+  type: article
+  title: "Self-similarity in the Web"
+  author:
+    - Dill, Stephen
+    - Kumar, S. Ravi
+    - McCurley, Kevin S.
+    - Rajagopalan, Sridhar
+    - Sivakumar, D.
+    - Tomkins, Andrew
+  date: 2001
+  parent:
+    type: periodical
+    title: "The VLDB Journal"
+  page-range: 69-78
+
+soleil01:
+  type: web
+  title: "http://hipercom.inria.fr/soleil/"
+  author: Soleil Levant
+  date: 2001
+
+Saloff96:
+  type: chapter
+  title: "Lectures on finite Markov Chains"
+  author: Saloff-Coste, L.
+  date: 1996
+  parent:
+    type: book
+    title: "Lecture Notes on Probability Theory and Statistics"
+    publisher: Springer Verlag
+  page-range: 301-413
+
+brin98anatomy:
+  type: article
+  title: "The anatomy of a large-scale hypertextual Web search engine"
+  author:
+    - Brin, Sergey
+    - Page, Lawrence
+  date: 1998
+  parent:
+    type: periodical
+    title: "Computer Networks and ISDN Systems"
+  volume: 30
+  issue: 1-7
+  page-range: 107-117
+
+price63little:
+  type: book
+  title: "Little Science, Big Science"
+  author: Price, Derek John de Solla
+  date: 1963
+  publisher: "Columbia University Press"
+
+tomlin03paradigm:
+  type: article
+  title: "A new Paradigm for Ranking Pages on the World Wide Web"
+  author: Tomlin, John A.
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Proceedings of the Twelfth International World Wide Web Conference"
+
+sydow04random:
+  type: article
+  title: "Random surfer with back step"
+  author: Sydow, Marcin
+  date: 2004
+  parent:
+    type: proceedings
+    title: "Proceedings of the 13th international World Wide Web conference on Alternate track papers & posters"
+  page-range: 352-353
+  publisher: ACM Press
+
+milic04smartback:
+  type: article
+  title: "Smartback: supporting users in back navigation"
+  author:
+    - Milic-Frayling, Natasa
+    - Jones, Rachel
+    - Rodden, Kerry
+    - Smyth, Gavin
+    - Blackwell, Alan
+    - Sommerer, Ralph
+  date: 2004
+  parent:
+    type: proceedings
+    title: "Proceedings of the 13th international conference on World Wide Web"
+  page-range: 63-71
+  publisher: ACM Press
+
+Webgraph:
+  type: web
+  title: "Projet WebGraph"
+  author:
+    - Boldi, Paolo
+    - Vigna, Sebastiano
+  url: "http://vigna.dsi.unimi.it/papers.php#BoVWFI"
+
+wang04behaviour:
+  type: article
+  title: "Behaviour Recovery and Complicated Pattern Definition in Web Usage Mining"
+  author:
+    - Wang, Long
+    - Meinel, Christoph
+  date: 2004
+  parent:
+    type: proceedings
+    title: "ICWE"
+  page-range: 531-544
+  publisher: LNCS
+
+catledge95characterizing:
+  type: article
+  title: "Characterizing Browsing Strategies in the World Wide Web"
+  author:
+    - Catledge, Lara D.
+    - Pitkow, James E.
+  date: 1995
+  parent:
+    type: periodical
+    title: "Computer Networks and ISDN Systems"
+  volume: 27
+  issue: 6
+  page-range: 1065-1073
+
+tauscher97people:
+  type: article
+  title: "How people revisit web pages: empirical findings and implications for the design of history systems"
+  author:
+    - Tauscher, L.
+    - Greenberg, S.
+  date: 1997
+  parent:
+    type: periodical
+    title: "International Journal of Human Computer Studies"
+  volume: 47
+  issue: 1
+  page-range: 97-137
+
+arasu01pagerank:
+  type: web
+  title: "PageRank Computation and the Structure of the Web: Experiments and Algorithms"
+  author:
+    - Arasu, A.
+    - Novak, J.
+    - Tomkins, A.
+    - Tomlin, J.
+  date: 2001
+
+cockburn01empirical:
+  type: article
+  title: "What Do Web Users Do? An Empirical Analysis of Web Use"
+  author:
+    - Cockburn, A.
+    - McKenzie, B.
+  date: 2001
+  parent:
+    type: periodical
+    title: "International Journal of Human Computer Studies"
+  volume: 54
+  page-range: 903-922
+
+cohen-incentives:
+  type: web
+  title: "Incentives Build Robustness in BitTorrent"
+  author: Cohen, Bram
+  date: 2003
+
+sgg:
+  type: article
+  title: "A Measurement Study of Peer-to-Peer File Sharing Systems"
+  author:
+    - Saroiu, Stefan
+    - Gummadi, P. Krishna
+    - Gribble, Steven D.
+  date: 2002
+  parent:
+    type: proceedings
+    title: "Proceedings of Multimedia Computing and Networking 2002 (MMCN '02)"
+
+fessant03mldonkey:
+  type: report
+  title: "MLdonkey, a Multi-Network Peer-to-Peer File-Sharing Program"
+  author:
+    - Le Fessant, Fabrice
+    - Patarin, Simon
+  date: 2003
+  organization: "INRIA"
+  serial-number: "RR-4797"
+
+cohen02replication:
+  type: web
+  title: "Replication strategies in unstructured peer-to-peer networks"
+  author:
+    - Cohen, E.
+    - Shenker, S.
+  date: 2002
+
+stoica01chord:
+  type: article
+  title: "Chord: A scalable peer-to-peer lookup service for internet applications"
+  author:
+    - Stoica, Ion
+    - Morris, Robert
+    - Karger, David
+    - Kaashoek, M. Frans
+    - Balakrishnan, Hari
+  date: 2001
+  parent:
+    type: proceedings
+    title: "Proceedings of the 2001 ACM SIGCOMM conference"
+  page-range: 149-160
+
+albert99diameter:
+  type: article
+  title: "Diameter of the World Wide Web"
+  author:
+    - Albert, R.
+    - Jeong, H.
+    - Barabasi, A.-L.
+  date: 1999
+  parent:
+    type: periodical
+    title: "Nature"
+  volume: 401
+  page-range: 130-131
+
+barabasi99emergence:
+  type: article
+  title: "Emergence of scaling in random networks"
+  author:
+    - Barabasi, Albert-Laszlo
+    - Albert, Reka
+  date: 1999
+  parent:
+    type: periodical
+    title: "Science"
+  volume: 286
+  page-range: 509-512
+
+stewart94introduction:
+  type: book
+  title: "Introduction to the Numerical Solution of Markov Chains"
+  author: Stewart, William J.
+  date: 1994
+  publisher: "Princeton University Press"
+
+whois04:
+  type: web
+  title: "http://www.whois.net/"
+  author: WhoIs
+  date: 2004
+
+feng95draw:
+  type: article
+  title: "How to draw a planar clustered graph"
+  author:
+    - Feng, Qingwen
+    - Cohen, Robert F.
+    - Eades, Peter
+  date: 1995
+  parent:
+    type: proceedings
+    title: "Computing and Combinatorics"
+  volume: 959
+  page-range: 21-31
+  publisher: Springer-Verlag
+
+li00defining:
+  type: article
+  title: "Defining logical domains in a web site"
+  author:
+    - Li, Wen-Syan
+    - Kolak, Okan
+    - Vu, Quoc
+    - Takano, Hajime
+  date: 2000
+  parent:
+    type: proceedings
+    title: "Proceedings of the eleventh ACM on Hypertext and hypermedia"
+  page-range: 123-132
+  publisher: ACM Press
+
+zhao01tapestry:
+  type: article
+  title: "Tapestry: An Infrastructure for Fault-tolerant Wide-area Location and Routing"
+  author:
+    - Zhao, Ben Y.
+    - Kubiatowicz, John
+    - Joseph, Anthony D.
+  date: 2001
+  parent:
+    type: report
+    title: "UC Berkeley Technical Report"
+  serial-number: "UCB/CSD-01-1141"
+
+ratnasamy01scalable:
+  type: article
+  title: "A Scalable Content-Addressable Network"
+  author:
+    - Ratnasamy, Sylvia
+    - Francis, Paul
+    - Handley, Mark
+    - Karp, Richard
+    - Shenker, Scott
+  date: 2001
+  parent:
+    type: proceedings
+    title: "Proceedings of the 2001 conference on Applications, technologies, architectures, and protocols for computer communications"
+  page-range: 161-172
+  publisher: ACM Press
+
+harvey03skipnet:
+  type: article
+  title: "SkipNet: A Scalable Overlay Network with Practical Locality Properties"
+  author:
+    - Harvey, Nicholas J. A.
+    - Jones, Michael B.
+    - Saroiu, Stefan
+    - Theimer, Marvin
+    - Wolman, Alec
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Proceedings of the 4th conference on USENIX Symposium on Internet Technologies and Systems"
+
+kangasharju01object:
+  type: article
+  title: "Object Replication Strategies in Content Distribution Networks"
+  author:
+    - Kangasharju, Jussi
+    - Roberts, James
+    - Ross, Keith W.
+  date: 2001
+  parent:
+    type: periodical
+    title: "Computer Communications"
+  volume: 25
+  issue: 4
+  page-range: 376-383
+
+salton89automatic:
+  type: book
+  title: "Automatic Text Processing: The Transformation, Analysis, and Retrieval of Information by Computer"
+  author: Salton, Gerard
+  date: 1989
+  publisher: Addison-Wesley
+
+yuwono95:
+  type: article
+  title: "Search and Ranking Algorithms for Locating Resources on the World Wide Web"
+  author:
+    - Yuwono, Budi
+    - Lee, Dik L.
+  date: 1995
+  parent:
+    type: proceedings
+    title: "Proceedings of the 12th International Conference on Data Engineering"
+  page-range: 164-171
+  publisher: IEEE Computer Society
+
+durand007experience:
+  type: report
+  title: "Expériences sur la décomposition de PageRank"
+  author: Durand, François
+  date: 2004
+  organization: "ENS Cachan"
+
+brinkmeier-communities:
+  type: article
+  title: "Communities in Graphs"
+  author: Brinkmeier, Michael
+  date: 2003
+  parent:
+    type: proceedings
+    title: "Proceedings of FCT 2003"
+
+kleinberg98:
+  type: article
+  title: "Authoritative Sources in a Hyperlinked Environment"
+  author: Kleinberg, Jon M.
+  date: 1998
+  parent:
+    type: proceedings
+    title: "Proceedings of the Ninth Annual ACM-SIAM Symposium on Discrete Algorithms"
+  page-range: 668-677
+
+albert00scalefree:
+  type: article
+  title: "Scale-Free Characteristics of Random Networks: The Topology of the World-Wide Web"
+  author:
+    - Albert, Reka
+    - Jeong, Hawoong
+    - Barabasi, Albert-Laszlo
+  date: 2000
+  parent:
+    type: periodical
+    title: "Physica A"
+  volume: 281
+  page-range: 69-77
+
+kleinberg99smallworld:
+  type: article
+  title: "The Small-World Phenomenon: An Algorithmic Perspective"
+  author: Kleinberg, Jon M.
+  date: 2000
+  parent:
+    type: proceedings
+    title: "Proceedings of the 32nd Annual ACM Symposium on Theory of Computing"
+  page-range: 163-170
+  publisher: ACM Press
+
+puniyani01intentional:
+  type: article
+  title: "Intentional Walks on Scale Free Small Worlds"
+  author:
+    - Puniyani, A. R.
+    - Lukose, R. M.
+    - Huberman, B. A.
+  date: 2001
+
+murray00sizing:
+  type: article
+  title: "Sizing the Internet"
+  author: Murray, Brian H.
+  date: 2000
+
+craven04google:
+  type: article
+  title: "Google, the Source"
+  author: Craven, Timothy C.
+  date: 2004
+  parent:
+    type: periodical
+    title: "College & Research Libraries"
+  volume: 65
+  issue: 4
+  page-range: 306-312

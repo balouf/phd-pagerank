@@ -1,0 +1,22 @@
+# Build output
+web/dist/
+
+# Compiled PDFs (except figures/)
+*.pdf
+!figures/*.pdf
+
+# Typst cache
+.typst-cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude workspace
+.claude/
