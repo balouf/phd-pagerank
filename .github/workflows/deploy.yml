@@ -36,11 +36,13 @@ jobs:
         with:
           path: web/dist
 
-      - name: Deploy Thesis on Github Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        if: github.ref == 'refs/heads/main'
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: web/dist/
-          single-commit: true
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
