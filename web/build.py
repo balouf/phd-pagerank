@@ -262,6 +262,7 @@ def build_page(
   <title>{title} — {thesis_title}</title>
   <meta name="author" content="Fabien Mathieu">
   <meta name="pagefind-base" content="{BASE_URL}">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/style.css">
   <script>
     (function(){{
