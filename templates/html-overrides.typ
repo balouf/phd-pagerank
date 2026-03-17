@@ -3,85 +3,37 @@
 // Show rules et fonctions spécifiques à l'export HTML
 // =============================================================================
 
-#import "i18n.typ": lang, t
+#import "i18n.typ": lang, t, _appendix-state, reset-chapter-counters
 
 // -----------------------------------------------------------------------------
 // Show rules pour l'export HTML
 // -----------------------------------------------------------------------------
 
 #let html-show-rules(doc) = {
-  // --- Headings : produire des <h1>/<h2>/<h3> sémantiques ---
+  // --- Headings : produire des <h1>/<h2>/<h3>/<h4> sémantiques ---
   // Les show rules de thesis-style.typ remplacent les headings par des blocks,
   // ce qui perd la sémantique HTML. On les override ici.
-  show heading.where(level: 1): it => context {
-    if target() == "html" {
-      let num-display = if it.numbering != none {
-        t([Chapitre ], [Chapter ]) + counter(heading).display() + [ — ]
-      }
-      let label-id = if it.has("label") { str(it.label) } else { none }
-      if label-id != none {
-        html.elem("h1", attrs: (id: label-id), [#num-display#it.body])
-      } else {
-        html.elem("h1", [#num-display#it.body])
-      }
-      counter(footnote).update(0)
-      counter(figure.where(kind: image)).update(0)
-      counter(figure.where(kind: table)).update(0)
-      counter(figure.where(kind: "algorithm")).update(0)
-      counter(math.equation).update(0)
-      // Reset des compteurs HTML des environnements (théorèmes, lemmes, etc.)
-      for id in ("theoreme", "lemme", "proposition", "corollaire", "definition",
-                  "thdef", "conjecture", "invariant", "remarque", "qo") {
-        counter(figure.where(kind: "thm-" + id)).update(0)
-      }
-    } else {
-      // Fallback to default (thesis-style.typ will handle it)
-      it
-    }
-  }
-
-  show heading.where(level: 2): it => context {
-    if target() == "html" {
-      let num-display = if it.numbering != none {
+  show heading: it => context {
+    if target() != "html" { return it }
+    let level = calc.min(it.level, 4)
+    let tag = ("h1", "h2", "h3", "h4").at(level - 1)
+    let num-display = if it.numbering != none {
+      if level == 1 {
+        let prefix = if _appendix-state.get() { t([Annexe ], [Appendix ]) } else { t([Chapitre ], [Chapter ]) }
+        prefix + counter(heading).display() + [ — ]
+      } else if level <= 3 {
         counter(heading).display() + [ ]
       }
-      let label-id = if it.has("label") { str(it.label) } else { none }
-      if label-id != none {
-        html.elem("h2", attrs: (id: label-id), [#num-display#it.body])
-      } else {
-        html.elem("h2", [#num-display#it.body])
-      }
-    } else {
-      it
     }
-  }
-
-  show heading.where(level: 3): it => context {
-    if target() == "html" {
-      let num-display = if it.numbering != none {
-        counter(heading).display() + [ ]
-      }
-      let label-id = if it.has("label") { str(it.label) } else { none }
-      if label-id != none {
-        html.elem("h3", attrs: (id: label-id), [#num-display#it.body])
-      } else {
-        html.elem("h3", [#num-display#it.body])
-      }
+    let label-id = if it.has("label") { str(it.label) } else { none }
+    let content = [#num-display#it.body]
+    if label-id != none {
+      html.elem(tag, attrs: (id: label-id), content)
     } else {
-      it
+      html.elem(tag, content)
     }
-  }
-
-  show heading.where(level: 4): it => context {
-    if target() == "html" {
-      let label-id = if it.has("label") { str(it.label) } else { none }
-      if label-id != none {
-        html.elem("h4", attrs: (id: label-id), it.body)
-      } else {
-        html.elem("h4", it.body)
-      }
-    } else {
-      it
+    if level == 1 {
+      reset-chapter-counters(include-theorems: true)
     }
   }
 

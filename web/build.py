@@ -39,6 +39,7 @@ LANGS = ["fr", "en"]
 CHAPTERS = {
     "fr": [
         ("cover", "index.html", "Accueil"),
+        ("disclaimer", "disclaimer.html", "Avertissement"),
         ("remerciements", "remerciements.html", "Remerciements"),
         ("introduction", "introduction.html", "Introduction"),
         ("ch1-taille", "ch1-taille.html", "Ch. 1 — Taille du Web"),
@@ -56,6 +57,7 @@ CHAPTERS = {
     ],
     "en": [
         ("cover", "index.html", "Home"),
+        ("disclaimer", "disclaimer.html", "Disclaimer"),
         ("remerciements", "remerciements.html", "Acknowledgments"),
         ("introduction", "introduction.html", "Introduction"),
         ("ch1-taille", "ch1-taille.html", "Ch. 1 — Web Size"),
@@ -75,7 +77,7 @@ CHAPTERS = {
 
 PARTS = {
     "fr": [
-        (None, ["cover", "remerciements", "introduction"]),
+        (None, ["cover", "disclaimer", "remerciements", "introduction"]),
         ("Partie I — Structures du Web", ["ch1-taille", "ch2-graphe", "ch3-local"]),
         ("Partie II — Les PageRank", ["ch4-markov", "ch5-pagerank", "ch6-back", "ch7-dpr"]),
         (None, ["conclusion"]),
@@ -83,7 +85,7 @@ PARTS = {
         (None, ["bibliography"]),
     ],
     "en": [
-        (None, ["cover", "remerciements", "introduction"]),
+        (None, ["cover", "disclaimer", "remerciements", "introduction"]),
         ("Part I — Web Structures", ["ch1-taille", "ch2-graphe", "ch3-local"]),
         ("Part II — PageRank", ["ch4-markov", "ch5-pagerank", "ch6-back", "ch7-dpr"]),
         (None, ["conclusion"]),
@@ -285,9 +287,6 @@ def build_page(
   </header>
   <div class="layout">
     <aside class="sidebar-left" data-pagefind-ignore>
-      <div class="sidebar-header">
-        <a href="index.html" class="site-title">{thesis_title}</a>
-      </div>
       {global_nav}
     </aside>
     <main class="content">

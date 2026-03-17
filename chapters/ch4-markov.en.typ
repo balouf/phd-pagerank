@@ -2,9 +2,7 @@
 // Chapter 4: Markov Chains (English version)
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = Markov Chains <pr-markov>
 

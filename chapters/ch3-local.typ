@@ -2,10 +2,7 @@
 // Chapitre 3 : Graphes et structures du web
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/algorithms.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = Graphes et structures du web <cl-local>
 

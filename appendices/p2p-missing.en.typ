@@ -1,7 +1,6 @@
 // Appendix C: Persistence and diffusion of files in peer-to-peer networks
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
+#import "../templates/prelude.typ": *
 
 = Persistence and diffusion of files in peer-to-peer networks <annexe:p2p>
 

@@ -1,7 +1,6 @@
 // Annexe C : Persistence et diffusion des fichiers dans les réseaux pair-à-pair
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
+#import "../templates/prelude.typ": *
 
 = Persistence et diffusion des fichiers dans les réseaux pair-à-pair <annexe:p2p>
 

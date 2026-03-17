@@ -2,10 +2,7 @@
 // Chapter 7: Fine Decomposition of PageRank
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/algorithms.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = Fine Decomposition of PageRank <pr-dpr>
 

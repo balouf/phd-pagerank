@@ -1,8 +1,6 @@
 // Conclusion
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = Conclusion <chapCcl>
 

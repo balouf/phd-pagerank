@@ -2,9 +2,7 @@
 // Chapitre 2 : Chalutiers et tailles du Web
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 #import "@preview/subpar:0.2.2"
 

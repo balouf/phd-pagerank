@@ -2,10 +2,7 @@
 // Chapitre 5 : PageRank, une manière d'estimer l'importance des pages web
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/algorithms.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = PageRank, une manière d'estimer l'importance des pages web <pr-pagerank>
 
@@ -256,7 +253,7 @@ retourner $P_n$
 
 
 #remarque[
-  À titre d'anecdote, signalons dans l'article fondateur du PageRank (@Page98) une légère confusion : l'@alg:pr-completion est proposé pour résoudre @eq:pr-sourcederang. Même s'il est précisé que l'introduction de $mu$ peut avoir un léger impact sur l'influence de $Z$#footnote[«The use of [$mu$] may have a small impact on the influence of [$Z$].», _op. cit._], le qualificatif «léger» peut relever de l'euphémisme : dans @eq:pr-sourcederang, $Z$ permet d'avoir une matrice apériodique irréductible. On a donc la garantie d'un unique vecteur propre strictement positif. En revanche, dans l'@alg:pr-completion, on travaille implicitement sur la complétion par $Z$ de $A$, et nous venons de voir que l'influence de $Z$ est quasi-nulle dès que $A$ n'est pas sous-irréductible#footnote[Rappelons qu'il suffit pour cela de deux pages qui ne pointent que l'une sur l'autre.] (théorème @thm:completion-irreductible). Heureusement, la confusion a disparu dans les articles suivants, notamment avec la normalisation du facteur _zap_ @brin98anatomy.
+  À titre d'anecdote, signalons dans l'article fondateur du PageRank (@Page98) une légère confusion : l'@alg:pr-completion est proposé pour résoudre @eq:pr-sourcederang. Même s'il est précisé que l'introduction de $mu$ peut avoir un léger impact sur l'influence de $Z$#footnote[«The use of [$mu$] may have a small impact on the influence of [$Z$].», _op. cit._], le qualificatif «léger» peut relever de l'euphémisme : dans @eq:pr-sourcederang, $Z$ permet d'avoir une matrice apériodique irréductible. On a donc la garantie d'un unique vecteur propre strictement positif. En revanche, dans l'@alg:pr-completion, on travaille implicitement sur la complétion par $Z$ de $A$, et nous venons de voir que l'influence de $Z$ est quasi-nulle dès que $A$ n'est pas sous-irréductible#footnote[Rappelons qu'il suffit pour cela de deux pages qui ne pointent que l'une sur l'autre.] (@thm:completion-irreductible). Heureusement, la confusion a disparu dans les articles suivants, notamment avec la normalisation du facteur _zap_ @brin98anatomy.
 ] <rem:bourde-bp>
 
 ==== Interprétation

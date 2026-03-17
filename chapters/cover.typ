@@ -1,20 +1,21 @@
-// Page de couverture HTML (version française)
+// Page de couverture HTML (bilingue)
 
-#import "../templates/thesis-style.typ": french-abstract
+#import "../templates/meta-data.typ": thesis-title, thesis-author, thesis-date, french-abstract, english-abstract
+#import "../templates/i18n.typ": t
 
 #html.elem("header", attrs: (class: "thesis-header"))[
   #html.elem("p", attrs: (class: "institution"))[Université Montpellier II]
   #html.elem("h1", attrs: (class: "thesis-title"))[
-    Graphes du Web — Mesures d'importance à la PageRank
+    #thesis-title
   ]
-  #html.elem("p", attrs: (class: "author"))[Fabien Mathieu]
-  #html.elem("p", attrs: (class: "date"))[8 décembre 2004]
+  #html.elem("p", attrs: (class: "author"))[#thesis-author]
+  #html.elem("p", attrs: (class: "date"))[#thesis-date]
   #html.elem("p", attrs: (class: "abstract"))[
-    #french-abstract
+    #t(french-abstract, english-abstract)
   ]
   #html.elem("p", attrs: (class: "pdf-download"))[
-    #html.elem("a", attrs: (href: "../pdf/thesis-fr.pdf", class: "btn-pdf"))[
-      📄 Télécharger le PDF
+    #html.elem("a", attrs: (href: t("../pdf/thesis-fr.pdf", "../pdf/thesis-en.pdf"), class: "btn-pdf"))[
+      #t([📄 Télécharger le PDF], [📄 Download PDF])
     ]
   ]
 ]

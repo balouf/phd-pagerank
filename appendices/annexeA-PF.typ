@@ -1,7 +1,6 @@
 // Annexe A : Théorème de Perron-Frobenius
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
+#import "../templates/prelude.typ": *
 
 = Théorème de Perron-Frobenius <perron>
 

@@ -2,9 +2,7 @@
 // Introduction
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 #heading(outlined: true, numbering: none)[Introduction] <chapIntro>
 

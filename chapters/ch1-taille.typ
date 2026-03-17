@@ -2,9 +2,7 @@
 // Chapitre 1 : Qu'est-ce que le Web ?
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = Qu'est-ce que le Web ? <cl-def-web>
 

@@ -1,7 +1,6 @@
 // Annexe B : Petite étude du PageRank sur le site de l'INRIA
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
+#import "../templates/prelude.typ": *
 
 = Petite étude du PageRank sur le site de l'INRIA <annexe:inria>
 

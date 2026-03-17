@@ -5,13 +5,7 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/droplet:0.3.1": dropcap
 #import "@preview/subpar:0.2.2"
-#import "i18n.typ": lang, t
-
-// Détection du mode HTML (passé via --input html=true)
-#let _is-html = sys.inputs.at("html", default: "false") == "true"
-
-// État partagé avec thesis-style.typ (même state par nom)
-#let _appendix-state = state("appendix", false)
+#import "i18n.typ": lang, t, _is-html, _appendix-state
 
 // -----------------------------------------------------------------------------
 // Helpers HTML pour les environnements

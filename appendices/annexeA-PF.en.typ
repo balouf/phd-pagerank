@@ -1,7 +1,6 @@
 // Appendix A: Perron-Frobenius Theorem
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
+#import "../templates/prelude.typ": *
 
 = Perron-Frobenius Theorem<perron>
 

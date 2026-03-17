@@ -14,6 +14,7 @@
 
 #import "templates/i18n.typ": lang, t
 #import "templates/thesis-style.typ": *
+#import "templates/meta-data.typ": *
 #import "templates/math-macros.typ": *
 #import "templates/environments.typ": *
 #import "templates/algorithms.typ": *
@@ -44,17 +45,22 @@
   ),
   author: "Fabien Mathieu",
 )
+// Note: thesis-title utilise du markup (smallcaps), donc on garde des chaînes simples ici pour le HTML.
 
 // -----------------------------------------------------------------------------
 // Page de titre (version HTML simplifiée)
 // -----------------------------------------------------------------------------
 
 #chapter-section("cover")[
-  #if lang == "en" {
-    include "chapters/cover.en.typ"
-  } else {
-    include "chapters/cover.typ"
-  }
+  #include "chapters/cover.typ"
+]
+
+// -----------------------------------------------------------------------------
+// Avertissement
+// -----------------------------------------------------------------------------
+
+#chapter-section("disclaimer")[
+  #include "templates/disclaimer.typ"
 ]
 
 // -----------------------------------------------------------------------------

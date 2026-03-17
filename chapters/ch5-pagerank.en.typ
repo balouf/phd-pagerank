@@ -3,10 +3,7 @@
 // (English translation)
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/algorithms.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = PageRank, a way to estimate the importance of web pages <pr-pagerank>
 
@@ -257,7 +254,7 @@ return $P_n$
 
 
 #remarque[
-  As an aside, let us note in the founding PageRank paper (@Page98) a slight confusion: @alg:pr-completion is proposed to solve @eq:pr-sourcederang. Although it is specified that the introduction of $mu$ may have a slight impact on the influence of $Z$#footnote["The use of [$mu$] may have a small impact on the influence of [$Z$].", _op. cit._], the qualifier "slight" may be an understatement: in @eq:pr-sourcederang, $Z$ ensures an aperiodic irreducible matrix. One therefore has the guarantee of a unique strictly positive eigenvector. In contrast, in @alg:pr-completion, one implicitly works on the completion of $A$ by $Z$, and we have just seen that the influence of $Z$ is negligible as soon as $A$ is not sub-irreducible#footnote[Recall that it suffices for this to have two pages that point only to each other.] (theorem @thm:completion-irreductible). Fortunately, the confusion was resolved in subsequent articles, notably with the normalization of the _zap_ factor @brin98anatomy.
+  As an aside, let us note in the founding PageRank paper (@Page98) a slight confusion: @alg:pr-completion is proposed to solve @eq:pr-sourcederang. Although it is specified that the introduction of $mu$ may have a slight impact on the influence of $Z$#footnote["The use of [$mu$] may have a small impact on the influence of [$Z$].", _op. cit._], the qualifier "slight" may be an understatement: in @eq:pr-sourcederang, $Z$ ensures an aperiodic irreducible matrix. One therefore has the guarantee of a unique strictly positive eigenvector. In contrast, in @alg:pr-completion, one implicitly works on the completion of $A$ by $Z$, and we have just seen that the influence of $Z$ is negligible as soon as $A$ is not sub-irreducible#footnote[Recall that it suffices for this to have two pages that point only to each other.] (@thm:completion-irreductible). Fortunately, the confusion was resolved in subsequent articles, notably with the normalization of the _zap_ factor @brin98anatomy.
 ] <rem:bourde-bp>
 
 ==== Interpretation

@@ -2,9 +2,7 @@
 // Chapitre 4 : Les chaînes de Markov
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = Les chaînes de Markov <pr-markov>
 

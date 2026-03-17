@@ -2,9 +2,7 @@
 // Chapter 1: What is the Web? (English version)
 // =============================================================================
 
-#import "../templates/environments.typ": *
-#import "../templates/math-macros.typ": *
-#import "../templates/acronyms.typ": *
+#import "../templates/prelude.typ": *
 
 = What is the Web? <cl-def-web>
 
