@@ -3,7 +3,7 @@
 #import "../templates/environments.typ": *
 #import "../templates/math-macros.typ": *
 
-= Théorème de Perron-Frobenius <perron>
+= Perron-Frobenius Theorem<perron>
 
 In 1907, Oskar Perron (1880-1975) published a theory of strictly positive matrices, which Georg Ferdinand Frobenius (1849-1917) extended in 1908, 1909, and 1912 to the case of nonnegative matrices#footnote[Helmut Wielandt -- 1910-2001 -- presented a simpler approach to the problem in 1950, which is the one used nowadays.]. The Perron-Frobenius theorem, which summarizes this theory, is in a sense the cornerstone of most convergence algorithms for stochastic matrices, and in particular of PageRank algorithms. We therefore thought it worthwhile to include a proof in the appendix, since in addition to guaranteeing the convergence of the algorithms, the concept of flow is inherent to the proof (strict inequality propagation lemma).
 
