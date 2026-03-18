@@ -38,6 +38,7 @@ Ensuite, la seconde partie étudie en profondeur les mesures d'importance _à la
 )
 
 #let thesis-author = [Fabien #smallcaps[Mathieu]]
+#let thesis-type = t([Thèse de doctorat], [Doctoral Dissertation])
 #let thesis-date = t([8 décembre 2004], [December 8, 2004])
 #let thesis-specialty = [Informatique]
 #let thesis-doctoral-school = [Information, Structures, Systèmes]
