@@ -9,7 +9,7 @@
   #html.elem("h1", attrs: (class: "thesis-title"))[
     #thesis-title
   ]
-  #html.elem("p", attrs: (class: "author"))[#thesis-author]
+  #html.elem("p", attrs: (class: "author"))[#t("par", "by") #thesis-author]
   #html.elem("div", attrs: (class: "defense"))[
     #html.elem("p")[
       #t(
