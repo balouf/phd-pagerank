@@ -85,7 +85,7 @@ $ P_(n+1)^(r b)(w,v) = cases(
   0 & "sinon."
 ) $ <rev2>
 
-Grâce aux équations @rev1 et @rev2, il est possible de réaliser un processus itératif de calcul de $P_n$, que l'on pourra par exemple initier par la distribution
+Grâce aux Équations #ref(<rev1>, supplement: none) et #ref(<rev2>, supplement: none), il est possible de réaliser un processus itératif de calcul de $P_n$, que l'on pourra par exemple initier par la distribution
 
 $ P_0^(r b)(w,v) = cases(
   frac(1, |E|) & "si" (w,v) in E,
@@ -128,13 +128,13 @@ Si on définit la _Back_-attractivité d'un sommet $v$ appartenant à $R$ par
 
 $ a(v) = sum_(w <- v) frac(1, d(w)+1) $
 
-il est alors possible de réécrire les équations @irr1 et @irr2 comme suit :
+il est alors possible de réécrire les Équations #ref(<irr1>, supplement: none) et #ref(<irr2>, supplement: none) comme suit :
 
 $ P_(n+1)^(i b)(v) = a(v) P_n^(h l)(v) $ <irr3>
 
 $ P_(n+1)^(h l)(v) = frac(1, d(v)+1) sum_(w -> v) P_n^(h l)(w) + frac(P_n^(i b)(v), d(v)) $ <irr4>
 
-En fusionnant @irr3 et @irr4, on obtient @irr5
+En fusionnant l'@irr3 et l'@irr4, on obtient l'@irr5
 
 $ P_(n+1)^(h l)(v) = frac(1, d(v)+1) sum_(w -> v) P_n^(h l)(w) + frac(a(v), d(v)) P_(n-1)^(h l)(v) $ <irr5>
 
@@ -177,17 +177,17 @@ Nous envisageons deux méthodes pour contourner ce problème :
 
 == Algorithme pratique : BackRank
 
-Nous venons de définir un processus stochastique, qui grâce au facteur _zap_ est irréductible et apériodique. Le théorème de Perron-Frobenius s'applique donc#footnote[On notera au passage que nous n'avons pas besoin d'écrire explicitement la matrice des transitions associée, qui est une matrice carrée de taille $|V|+|E|$. Il nous suffit de savoir que cette matrice existe et que c'est elle qui régit implicitement notre processus.] et nous permet d'affirmer que des itérations successives des équations @damp1 et @damp2 vont converger vers un point fixe unique (à renormalisation près). Les conditions initiales peuvent par exemple être une distribution selon $Z$ avec un historique nul ($P_0^(i b)=Z$ et $P_0^(h l)=0$).
+Nous venons de définir un processus stochastique, qui grâce au facteur _zap_ est irréductible et apériodique. Le théorème de Perron-Frobenius s'applique donc#footnote[On notera au passage que nous n'avons pas besoin d'écrire explicitement la matrice des transitions associée, qui est une matrice carrée de taille $|V|+|E|$. Il nous suffit de savoir que cette matrice existe et que c'est elle qui régit implicitement notre processus.] et nous permet d'affirmer que des itérations successives des Équations #ref(<damp1>, supplement: none) et #ref(<damp2>, supplement: none) vont converger vers un point fixe unique (à renormalisation près). Les conditions initiales peuvent par exemple être une distribution selon $Z$ avec un historique nul ($P_0^(i b)=Z$ et $P_0^(h l)=0$).
 
 === Optimisation <sec:pr-back-optimisation>
 
 Nous supposerons ici que nous avons choisi $Z$ tel que $Z(v)=0$ si $v in S$.
 
-D'après @damp1 et @damp2, $P_(n+1)^(h l)(v)$ peut se définir récursivement, pour $v in R$ par :
+D'après l'@damp1 et l'@damp2, $P_(n+1)^(h l)(v)$ peut se définir récursivement, pour $v in R$ par :
 
 $ P_(n+1)^(h l)(v) = frac(d, d(v)+1) sum_(w -> v) P_n^(h l)(w) + frac(d, d(v)) (d dot a(v) P_(n-1)^(h l)(v) + (1-d) Z(v)) $ <damp3>
 
-@damp3 est une récurrence à deux termes, dont on sait qu'elle converge vers un point fixe. Comme seul le point fixe nous intéresse, on peut remplacer $P_(n-1)^(h l)$ par $P_n^(h l)$ en gardant une convergence vers le même point fixe (méthode de Gauss-Seidel). On obtient ainsi l'@damp4.
+L'@damp3 est une récurrence à deux termes, dont on sait qu'elle converge vers un point fixe. Comme seul le point fixe nous intéresse, on peut remplacer $P_(n-1)^(h l)$ par $P_n^(h l)$ en gardant une convergence vers le même point fixe (méthode de Gauss-Seidel). On obtient ainsi l'@damp4.
 
 $ P_(n+1)^(h l)(v) = frac(d, d(v)+1) sum_(w -> v) P_n^(h l)(w) + frac(d, d(v)) (d dot a(v) P_n^(h l)(v) + (1-d) Z(v)) $ <damp4>
 

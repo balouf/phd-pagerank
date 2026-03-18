@@ -85,7 +85,7 @@ $ P_(n+1)^(r b)(w,v) = cases(
   0 & "otherwise."
 ) $ <rev2>
 
-Using equations @rev1 and @rev2, it is possible to carry out an iterative computation of $P_n$, which can for example be initiated with the distribution
+Using @rev1 and @rev2, it is possible to carry out an iterative computation of $P_n$, which can for example be initiated with the distribution
 
 $ P_0^(r b)(w,v) = cases(
   frac(1, |E|) & "if" (w,v) in E,
@@ -128,7 +128,7 @@ If we define the _Back_-attractiveness of a vertex $v$ belonging to $R$ by
 
 $ a(v) = sum_(w <- v) frac(1, d(w)+1) $
 
-it is then possible to rewrite equations @irr1 and @irr2 as follows:
+it is then possible to rewrite @irr1 and @irr2 as follows:
 
 $ P_(n+1)^(i b)(v) = a(v) P_n^(h l)(v) $ <irr3>
 
@@ -177,7 +177,7 @@ We consider two methods to work around this problem:
 
 == Practical algorithm: BackRank
 
-We have just defined a stochastic process, which thanks to the _zap_ factor is irreducible and aperiodic. The Perron-Frobenius theorem therefore applies#footnote[Note in passing that we do not need to explicitly write the associated transition matrix, which is a square matrix of size $|V|+|E|$. It suffices to know that this matrix exists and that it implicitly governs our process.] and allows us to assert that successive iterations of equations @damp1 and @damp2 will converge to a unique fixed point (up to renormalization). The initial conditions can for example be a distribution according to $Z$ with an empty history ($P_0^(i b)=Z$ and $P_0^(h l)=0$).
+We have just defined a stochastic process, which thanks to the _zap_ factor is irreducible and aperiodic. The Perron-Frobenius theorem therefore applies#footnote[Note in passing that we do not need to explicitly write the associated transition matrix, which is a square matrix of size $|V|+|E|$. It suffices to know that this matrix exists and that it implicitly governs our process.] and allows us to assert that successive iterations of @damp1 and @damp2 will converge to a unique fixed point (up to renormalization). The initial conditions can for example be a distribution according to $Z$ with an empty history ($P_0^(i b)=Z$ and $P_0^(h l)=0$).
 
 === Optimization <sec:pr-back-optimisation>
 
