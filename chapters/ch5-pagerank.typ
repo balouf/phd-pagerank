@@ -101,7 +101,7 @@ Maintenant que nous avons défini deux façons de considérer l'importance d'une
 
 $ P(v) = sum_(w -> v) 1/(d(w)) P(w) $ <eq:naouaque>
 
-On peut constater qu'on a bien une relation de transfert d'importance comme celle définie par @eq:importance, et que @eq:naouaque obéit en plus à un principe de conservation : une page donnée transmet l'intégralité de son importance, celle-ci étant équitablement répartie entre les différentes pages pointées. La probabilité, vue comme une importance, se transmet donc à travers les hyperliens à la manière d'un flot.
+On peut constater qu'on a bien une relation de transfert d'importance comme celle définie par l'@eq:importance, et que l'@eq:naouaque obéit en plus à un principe de conservation : une page donnée transmet l'intégralité de son importance, celle-ci étant équitablement répartie entre les différentes pages pointées. La probabilité, vue comme une importance, se transmet donc à travers les hyperliens à la manière d'un flot.
 
 == Les modèles classiques <sec:pr-modele>
 
@@ -109,7 +109,7 @@ Bien qu'on parle souvent du PageRank au singulier, il existe en réalité une mu
 
 === Cas idéal <sec:pr-ideal>
 
-Dans le cas où le graphe du Web $G = (V, E)$ que l'on veut étudier est apériodique et fortement connecté, les principes vus dans @sec:pr-axiomes s'appliquent directement : en effet, il s'agit de rechercher une distribution de probabilité sur $V$ vérifiant :
+Dans le cas où le graphe du Web $G = (V, E)$ que l'on veut étudier est apériodique et fortement connecté, les principes vus dans la @sec:pr-axiomes s'appliquent directement : en effet, il s'agit de rechercher une distribution de probabilité sur $V$ vérifiant :
 
 $ forall v in V, P(v) = sum_(w -> v) (P(w))/(d(w)) $ <eq:prank>
 
@@ -137,7 +137,7 @@ Cette distribution de probabilité $P$ est appelée PageRank.
 ]
 
 #remarque[
-  Si le graphe n'est pas fortement connexe, d'après le théorème @thm:reductible, il y a quand même convergence, mais ni unicité (la dimension de l'espace des solutions est égal au nombre de composantes fortement connexes récurrentes), ni garantie que le support de la solution soit égal à $V$ (en particulier s'il existe des composantes transitoires). L'existence de périodicité(s) peut en revanche empêcher la convergence, mais le théorème @thm:periodique indique comment il est possible de contourner le problème.
+  Si le graphe n'est pas fortement connexe, d'après le @thm:reductible, il y a quand même convergence, mais ni unicité (la dimension de l'espace des solutions est égal au nombre de composantes fortement connexes récurrentes), ni garantie que le support de la solution soit égal à $V$ (en particulier s'il existe des composantes transitoires). L'existence de périodicité(s) peut en revanche empêcher la convergence, mais le @thm:periodique indique comment il est possible de contourner le problème.
 ]
 
 === Renormalisation simple <sec:pr-renormalisation>
@@ -148,7 +148,7 @@ $ P_(n+1) = 1/(norm(A^t P_n)_1) A^t P_n $
 
 Ce procédé itératif est une méthode de la puissance (@stewart94introduction), on sait donc qu'il va converger vers un vecteur propre associé à la plus grande valeur propre de $A$. Deux cas sont alors à considérer :
 
-- Si la matrice $A$ est sous-irréductible, alors sa valeur propre maximale est strictement inférieure à 1. D'après le théorème @thm:sousfiltre#footnote[Voir #fref(<thm:sousfiltre>).], l'espace propre associé est de dimension $d$, où $d$ est le nombre de composantes pseudo-récurrentes, et son support est celui engendré par l'union des filtres des composantes pseudo-récurrentes. Dans le cas particulier où $A$ est pseudo-irréductible, l'espace propre est une droite, et il existe un vecteur propre associé strictement positif : grâce à la renormalisation, tout se passe alors comme dans le cas d'une matrice stochastique irréductible.
+- Si la matrice $A$ est sous-irréductible, alors sa valeur propre maximale est strictement inférieure à 1. D'après le @thm:sousfiltre#footnote[Voir #fref(<thm:sousfiltre>).], l'espace propre associé est de dimension $d$, où $d$ est le nombre de composantes pseudo-récurrentes, et son support est celui engendré par l'union des filtres des composantes pseudo-récurrentes. Dans le cas particulier où $A$ est pseudo-irréductible, l'espace propre est une droite, et il existe un vecteur propre associé strictement positif : grâce à la renormalisation, tout se passe alors comme dans le cas d'une matrice stochastique irréductible.
 
 - Si la matrice $A$ n'est pas sous-irréductible, $G$ contient au moins une composante fortement connexe récurrente sur laquelle $A$ est stochastique. La valeur propre maximale de $A$ est donc $1$, ce qui signifie que la renormalisation ne va rien changer au résultat initial : le vecteur propre sera une combinaison linéaire des vecteurs propres sur les différentes composantes fortement connexes sur lesquelles $A$ est stochastique#footnote[En d'autres termes, les composantes fortement connexes récurrentes.].
 
@@ -170,7 +170,7 @@ Par contre, dès que l'espace propre maximal a une dimension supérieure à $1$,
 
 === Complétion stochastique <sec:pr-completion>
 
-Afin de remplacer $A$ par une matrice stochastique, et d'éviter à travers une simple renormalisation d'établir un processus stochastique équivalent non contrôlé, une idée naturelle est d'ajouter des transitions aux pages sans liens. Une des méthodes possibles consiste à modéliser l'emploi de la touche _Back_, et sera l'objet du @pr-back. Une autre méthode, proposée#footnote[Sans le savoir ? Voir remarque @rem:bourde-bp.] initialement par @Page98 (sous la forme de l'@alg:pr-completion) et étudiée entre autres par @langville04deeper, consiste à définir une distribution de probabilité _par défaut_ $Z$ sur $V$, et à s'en servir pour modéliser le comportement du surfeur aléatoire quand il arrive sur une page sans lien. Concrètement, on va remplacer dans $A$ chaque ligne nulle (qui correspond donc à une page sans lien) par la ligne $Z^t$.
+Afin de remplacer $A$ par une matrice stochastique, et d'éviter à travers une simple renormalisation d'établir un processus stochastique équivalent non contrôlé, une idée naturelle est d'ajouter des transitions aux pages sans liens. Une des méthodes possibles consiste à modéliser l'emploi de la touche _Back_, et sera l'objet du @pr-back. Une autre méthode, proposée#footnote[Sans le savoir ? Voir @rem:bourde-bp.] initialement par @Page98 (sous la forme de l'@alg:pr-completion) et étudiée entre autres par @langville04deeper, consiste à définir une distribution de probabilité _par défaut_ $Z$ sur $V$, et à s'en servir pour modéliser le comportement du surfeur aléatoire quand il arrive sur une page sans lien. Concrètement, on va remplacer dans $A$ chaque ligne nulle (qui correspond donc à une page sans lien) par la ligne $Z^t$.
 
 #alg(caption: [PageRank : modèle par complétion stochastique (d'après @Page98)])[
 Données
@@ -253,7 +253,7 @@ retourner $P_n$
 
 
 #remarque[
-  À titre d'anecdote, signalons dans l'article fondateur du PageRank (@Page98) une légère confusion : l'@alg:pr-completion est proposé pour résoudre @eq:pr-sourcederang. Même s'il est précisé que l'introduction de $mu$ peut avoir un léger impact sur l'influence de $Z$#footnote[«The use of [$mu$] may have a small impact on the influence of [$Z$].», _op. cit._], le qualificatif «léger» peut relever de l'euphémisme : dans @eq:pr-sourcederang, $Z$ permet d'avoir une matrice apériodique irréductible. On a donc la garantie d'un unique vecteur propre strictement positif. En revanche, dans l'@alg:pr-completion, on travaille implicitement sur la complétion par $Z$ de $A$, et nous venons de voir que l'influence de $Z$ est quasi-nulle dès que $A$ n'est pas sous-irréductible#footnote[Rappelons qu'il suffit pour cela de deux pages qui ne pointent que l'une sur l'autre.] (@thm:completion-irreductible). Heureusement, la confusion a disparu dans les articles suivants, notamment avec la normalisation du facteur _zap_ @brin98anatomy.
+  À titre d'anecdote, signalons dans l'article fondateur du PageRank (@Page98) une légère confusion : l'@alg:pr-completion est proposé pour résoudre l'@eq:pr-sourcederang. Même s'il est précisé que l'introduction de $mu$ peut avoir un léger impact sur l'influence de $Z$#footnote[«The use of [$mu$] may have a small impact on the influence of [$Z$].», _op. cit._], le qualificatif «léger» peut relever de l'euphémisme : dans l'@eq:pr-sourcederang, $Z$ permet d'avoir une matrice apériodique irréductible. On a donc la garantie d'un unique vecteur propre strictement positif. En revanche, dans l'@alg:pr-completion, on travaille implicitement sur la complétion par $Z$ de $A$, et nous venons de voir que l'influence de $Z$ est quasi-nulle dès que $A$ n'est pas sous-irréductible#footnote[Rappelons qu'il suffit pour cela de deux pages qui ne pointent que l'une sur l'autre.] (@thm:completion-irreductible). Heureusement, la confusion a disparu dans les articles suivants, notamment avec la normalisation du facteur _zap_ @brin98anatomy.
 ] <rem:bourde-bp>
 
 ==== Interprétation
@@ -270,7 +270,7 @@ Avant d'aller plus loin, il convient de parler du choix du paramètre $d$ et des
 
 ==== Compromis convergence/altération du graphe
 
-D'après le théorème @thm:vp-secondaires, si $A$ est stochastique, ce que l'on peut supposer quitte à effectuer une complétion, les valeurs propres de $hat(A)$ autres que $1$ sont inférieures à $d$ en valeur absolue#footnote[Si $A$ possède plus d'une composante fortement connexe récurrente, $d$ est une valeur propre.]. Cela garantit aux algorithmes @alg:pr-zap et @alg:pr-hybride une convergence géométrique de raison au plus égale à $d$. On a donc intérêt à choisir $d$ le plus petit possible... sauf que plus $d$ est petit, plus l'influence du _zap_, qui est une composante extérieure au graphe intrinsèque du Web, est grande. Un $d$ petit altère, voire dénature le graphe sous-jacent. Choisir le plus grand $d$ garantissant une convergence raisonnable semble donc un bon compromis. Or, les limitations techniques font que le nombre d'itérations réalisables par un moteur de recherche comme _Google_ est de l'ordre de la centaine#footnote[Il faut en effet recalculer le PageRank périodiquement, et avec plusieurs milliards de pages à traiter, chaque itération prend un temps non négligeable.]. $d = 0,85$ offre une précision de $10^(-8)$ au bout de $114$ itérations, $10^(-11)$ au bout de $156$ itérations, et semble donc être heuristiquement le compromis recherché. En effet, comme nous le verrons dans la @sec:kemeny, $10^(-8)$ correspond au seuil de différenciation d'un graphe du Web d'un million de pages, alors que $10^(-11)$ est le seuil de différenciation pour un milliard de pages.
+D'après le @thm:vp-secondaires, si $A$ est stochastique, ce que l'on peut supposer quitte à effectuer une complétion, les valeurs propres de $hat(A)$ autres que $1$ sont inférieures à $d$ en valeur absolue#footnote[Si $A$ possède plus d'une composante fortement connexe récurrente, $d$ est une valeur propre.]. Cela garantit aux algorithmes @alg:pr-zap et @alg:pr-hybride une convergence géométrique de raison au plus égale à $d$. On a donc intérêt à choisir $d$ le plus petit possible... sauf que plus $d$ est petit, plus l'influence du _zap_, qui est une composante extérieure au graphe intrinsèque du Web, est grande. Un $d$ petit altère, voire dénature le graphe sous-jacent. Choisir le plus grand $d$ garantissant une convergence raisonnable semble donc un bon compromis. Or, les limitations techniques font que le nombre d'itérations réalisables par un moteur de recherche comme _Google_ est de l'ordre de la centaine#footnote[Il faut en effet recalculer le PageRank périodiquement, et avec plusieurs milliards de pages à traiter, chaque itération prend un temps non négligeable.]. $d = 0,85$ offre une précision de $10^(-8)$ au bout de $114$ itérations, $10^(-11)$ au bout de $156$ itérations, et semble donc être heuristiquement le compromis recherché. En effet, comme nous le verrons dans la @sec:kemeny, $10^(-8)$ correspond au seuil de différenciation d'un graphe du Web d'un million de pages, alors que $10^(-11)$ est le seuil de différenciation pour un milliard de pages.
 
 #Thm[
   Soit $A$ une matrice stochastique. Si $x$ est un vecteur propre de $hat(A)^t$ associé à $lambda != 1$, alors $x$ est un vecteur propre de $A^t$ et $hat(A)^t x = d A^t x$. En particulier, $abs(lambda) <= d$.
@@ -290,7 +290,7 @@ D'après le théorème @thm:vp-secondaires, si $A$ est stochastique, ce que l'on
 ]
 
 #remarque[
-  Dans @kamvar03extrapolation se trouve une preuve du fait que toute valeur propre autre que $1$ (qui est simple pour $hat(A)$) est inférieure à $d$. Dans @langville04deeper, il est montré en plus que les valeurs propres secondaires de $hat(A)$ sont égales à $d$ fois celles de $A$ (les multiplicités de $1$ étant comptées comme secondaires), et les auteurs affirment que leur preuve est plus compacte que celle de @kamvar03extrapolation. Le théorème @thm:vp-secondaires montre en plus que les vecteurs propres secondaires de $hat(A)^t$ sont ceux de $A^t$, et nous affirmons que notre preuve est plus compacte que celle de @langville04deeper. Il ne reste plus qu'à trouver un théorème plus précis que le théorème @thm:vp-secondaires, avec une preuve plus compacte...
+  Dans @kamvar03extrapolation se trouve une preuve du fait que toute valeur propre autre que $1$ (qui est simple pour $hat(A)$) est inférieure à $d$. Dans @langville04deeper, il est montré en plus que les valeurs propres secondaires de $hat(A)$ sont égales à $d$ fois celles de $A$ (les multiplicités de $1$ étant comptées comme secondaires), et les auteurs affirment que leur preuve est plus compacte que celle de @kamvar03extrapolation. Le @thm:vp-secondaires montre en plus que les vecteurs propres secondaires de $hat(A)^t$ sont ceux de $A^t$, et nous affirmons que notre preuve est plus compacte que celle de @langville04deeper. Il ne reste plus qu'à trouver un théorème plus précis que le @thm:vp-secondaires, avec une preuve plus compacte...
 ]
 
 == Source de rang et matrices sous-stochastiques <sec:source-sous>
@@ -337,7 +337,7 @@ L'algorithme de PageRank non-compensé consiste à calculer $P_(n+1) = d A^t P_n
 ] <thm:non-compense>
 
 #Preuve[
-  Comme $forall X in RR^n$, $norm(A^t X)_1 <= norm(X)_1$, l'application $X -> d A^t X + (1-d) Z$ est $d$-lipschitzienne. Elle possède donc un point fixe unique vers lequel toute suite $X_(n+1) = d A^t X_n + (1-d) Z$ converge géométriquement, avec une raison inférieure ou égale à $d$#footnote[Notons au passage que dans le cas où $A$ est stochastique, nous avons là une preuve très simple de la convergence de raison $d$, mais le théorème @thm:vp-secondaires donne quand même plus d'informations...].
+  Comme $forall X in RR^n$, $norm(A^t X)_1 <= norm(X)_1$, l'application $X -> d A^t X + (1-d) Z$ est $d$-lipschitzienne. Elle possède donc un point fixe unique vers lequel toute suite $X_(n+1) = d A^t X_n + (1-d) Z$ converge géométriquement, avec une raison inférieure ou égale à $d$#footnote[Notons au passage que dans le cas où $A$ est stochastique, nous avons là une preuve très simple de la convergence de raison $d$, mais le @thm:vp-secondaires donne quand même plus d'informations...].
 
   Ce point fixe $P$ vérifie $P = d A^t P + (1-d) Z$, et vaut donc :
 
@@ -353,7 +353,7 @@ L'algorithme de PageRank non-compensé consiste à calculer $P_(n+1) = d A^t P_n
 Il existe un lien très fort entre l'algorithme $mu$-compensé et l'algorithme non-compensé : ils donnent le même résultat, comme le montre le @thm:nonc-mu.
 
 #Thm[
-  Soit $A$ une matrice sous-stochastique, $Z$ une distribution recouvrante. Si $overline(P)$ est le PageRank obtenu par $mu$-compensation (cf algorithme @alg:pr-hybride), et $P$ le PageRank non-compensé, point fixe de l'application $X -> d A^t X + (1-d) Z$, alors $P$ est homogène à $overline(P)$.
+  Soit $A$ une matrice sous-stochastique, $Z$ une distribution recouvrante. Si $overline(P)$ est le PageRank obtenu par $mu$-compensation (cf @alg:pr-hybride), et $P$ le PageRank non-compensé, point fixe de l'application $X -> d A^t X + (1-d) Z$, alors $P$ est homogène à $overline(P)$.
 ] <thm:nonc-mu>
 
 #Preuve[
@@ -377,7 +377,7 @@ Les tests que nous avons pu effectuer montrent que avec le choix de $Z$ comme di
 La $mu$-compensation doit calculer le paramètre $mu$ à chaque itération, alors que la non-compensation n'en a pas besoin. Est-ce que cela a une grande influence sur les performances ?
 
 - Si la matrice $A$ ne tient pas en mémoire, le facteur limitant dans le calcul d'une itération est la multiplication de $A^t$ par $P_n$. Le temps utilisé pour compenser est alors négligeable, et la vitesse des itérations n'a alors aucune influence dans le choix entre les deux algorithmes.
-- En revanche, si $A$, ou même simplement la matrice d'adjacence, tient en mémoire, le calcul et l'incorporation de $mu$ prend une durée comparable à celle du calcul de $A^t P$. En fait, tout calcul de norme alourdit de manière non-négligeable le calcul d'une itération, et même le calcul du paramètre de convergence $delta$ diminue considérablement les performances. On aboutit ainsi à l'algorithme SpeedRank (algorithme @alg:speedrank), qui calcule le PageRank non-compensé en estimant grossièrement le nombre d'itérations nécessaires à une bonne convergence. Nos expériences ont mis en évidence un gain de vitesse de plus de $300%$ sur les itérations entre SpeedRank et l'algorithme @alg:pr-hybride, ce qui compense plus que largement la légère sur-estimation du nombre d'itérations nécessaires pour converger.
+- En revanche, si $A$, ou même simplement la matrice d'adjacence, tient en mémoire, le calcul et l'incorporation de $mu$ prend une durée comparable à celle du calcul de $A^t P$. En fait, tout calcul de norme alourdit de manière non-négligeable le calcul d'une itération, et même le calcul du paramètre de convergence $delta$ diminue considérablement les performances. On aboutit ainsi à l'algorithme SpeedRank (#ref(<alg:speedrank>, supplement: none)), qui calcule le PageRank non-compensé en estimant grossièrement le nombre d'itérations nécessaires à une bonne convergence. Nos expériences ont mis en évidence un gain de vitesse de plus de $300%$ sur les itérations entre SpeedRank et l'@alg:pr-hybride, ce qui compense plus que largement la légère sur-estimation du nombre d'itérations nécessaires pour converger.
 
 En terme de performances, l'algorithme $mu$-compensé est donc à proscrire si l'on travaille sur des «petits» graphes. On s'étonnera au passage que Kamvar _et al._ utilisent la $mu$-compensation dans leur algorithme BlockRank @kamvar-exploiting, qui est justement basé sur la décomposition du PageRank sur des petits graphes. Pour des spécialistes de l'optimisation du calcul de PageRank (cf @kamvar03extrapolation), il est curieux de passer à côté d'un gain de vitesse de $300%$...
 
@@ -458,7 +458,7 @@ Formellement, si $A$ est une matrice stochastique (éventuellement complétée),
 
 $ tilde(A) = mat(d A, (1-d) un^t; Z^t, 0) $
 
-Le vecteur asymptotique de probabilité correspondant est obtenu par l'algorithme @alg:pr-virtuelle.
+Le vecteur asymptotique de probabilité correspondant est obtenu par l'@alg:pr-virtuelle.
 
 #alg(caption: [PageRank : modèle avec page virtuelle])[
 Données

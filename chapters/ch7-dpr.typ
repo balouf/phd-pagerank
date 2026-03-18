@@ -62,7 +62,7 @@ $ A_(cal(S)) = (a_(v,w) delta_(cal(S))(v,w))_(v,w in V) $
 
 Nous avons également besoin de définir le degré interne $d_i$ (resp. degré externe $d_e$) d'un sommet $v$ comme son degré sortant dans le graphe induit par $S(v)$ (resp. induit par ${v} union (V backslash S(v))$).
 
-Nous sommes maintenant en mesure de définir les notions de PageRank interne et externe, et de les relier au PageRank $P$ défini par @eq:dpr-pr-ideal.
+Nous sommes maintenant en mesure de définir les notions de PageRank interne et externe, et de les relier au PageRank $P$ défini par l'@eq:dpr-pr-ideal.
 
 - Le *PageRank entrant interne* $P_(e i)$ (resp. *PageRank entrant externe* $P_(e e)$) d'une page $v$ de $V$ est la probabilité, lorsque le surfeur aléatoire est en régime stationnaire, de venir en $v$ à partir d'une page de $S(v)$ (resp. à partir d'une page de $V backslash S(v)$). De cette définition sont déduites les @eq:pi et @eq:pe :
 
@@ -128,7 +128,7 @@ La loi de conservation externe @eq:cone nous montre qu'un site restitue, à trav
 ] <inversible>
 
 #preuve[
-  Il nous suffit de montrer que $A_(cal(S))$ est sous-irréductible. Cela prouvera que son rayon spectral est strictement inférieur à $1$ (théorème @thm:sousstoch, remarque @rem:quasireduc), et donc que $("Id" - A_(cal(S))^t)$ est inversible.
+  Il nous suffit de montrer que $A_(cal(S))$ est sous-irréductible. Cela prouvera que son rayon spectral est strictement inférieur à $1$ (@thm:sousstoch, @rem:quasireduc), et donc que $("Id" - A_(cal(S))^t)$ est inversible.
 
   Raisonnons par l'absurde : si $A_(cal(S))$ n'est pas sous-irréductible, il existe au moins une composante fortement connexe stochastique dans le graphe des transitions associé à $A_(cal(S))$. Cette composante est forcément interne à un site puisqu'il n'y a aucun lien externe. Elle existe donc aussi dans $A$, qui ne peut alors être irréductible que si la composante est $V$ tout entier, ce qui est impossible (nous avons fait l'hypothèse que $A$ était irréductible et que $cal(S)$ contenait au moins deux sites).
 ]
@@ -268,13 +268,13 @@ Heureusement, la sur-amplification est contrôlée par le facteur _zap_.
 
 === Introduction du facteur _zap_ <amor-flot>
 
-Nous allons à partir de maintenant quitter le cadre idéal où $G$ est fortement connexe et apériodique pour considérer un graphe du Web $G$ quelconque. Il nous faut donc en particulier choisir quel modèle de PageRank adopter, et notre choix s'est naturellement porté sur le PageRank non-compensé avec facteur _zap_. Grâce au théorème @thm:nonc-mu, nous savons en effet que c'est un modèle strictement équivalent au PageRank $mu$-compensé généralement utilisé, à la différence près qu'il permet de travailler avec un flot de _zap_ constant.
+Nous allons à partir de maintenant quitter le cadre idéal où $G$ est fortement connexe et apériodique pour considérer un graphe du Web $G$ quelconque. Il nous faut donc en particulier choisir quel modèle de PageRank adopter, et notre choix s'est naturellement porté sur le PageRank non-compensé avec facteur _zap_. Grâce au @thm:nonc-mu, nous savons en effet que c'est un modèle strictement équivalent au PageRank $mu$-compensé généralement utilisé, à la différence près qu'il permet de travailler avec un flot de _zap_ constant.
 
 $P$ est donc maintenant l'unique vecteur vérifiant $P = d A^t P + (1-d) Z$, $Z$ étant une distribution recouvrante et $d$ le facteur _zap_.
 
 Nous avons également besoin d'étiqueter le flot de _zap_. Nous pourrions le répartir en flot externe et interne, selon que le _zap_ nous fasse sortir du site où l'on est ou non, mais nous avons jugé plus judicieux de considérer le flot de _zap_ comme un flot externe dans sa totalité, et de séparer le flot externe en flot externe de clic et flot externe de _zap_. Nous allons continuer à réserver les termes de PageRank externe entrant et PageRank externe sortant au flot externe de clic, et nous allons par analogie avec l'électricité définir deux nouveaux flots de PageRank liés au _zap_ : le *PageRank induit*, noté $P_("ind")$, qui est la probabilité#footnote[Même si le modèle non-compensé fait que l'on ne devrait plus parler de probabilité, nous nous permettrons sporadiquement de continuer à utiliser ce terme, même si il est plus correct de parler de flot.] <ftn:proba-flot> de venir sur une page par _zap_, et le *PageRank dissipé*, noté $P_("dis")$, qui est la probabilité#footnote[Voir note de bas de page précédente.] de quitter une page par _zap_.
 
-Nous avons maintenant un bestiaire constitué de six PageRanks, ou plutôt de six flots, qui sont récapitulés dans @tab:sixflow (rappel : $s$ est le défaut stochastique, définit par $s = un^t - A dot un^t$).
+Nous avons maintenant un bestiaire constitué de six PageRanks, ou plutôt de six flots, qui sont récapitulés dans le @tab:sixflow (rappel : $s$ est le défaut stochastique, définit par $s = un^t - A dot un^t$).
 
 #figure(
   table(
@@ -300,7 +300,7 @@ L'équation nous donne un résultat intéressant : si un site $S$ possède un Pa
 
 === _Zap_ et coefficient d'amplification <amor-ampli>
 
-Avec l'introduction du facteur _zap_, @eq:relation devient maintenant
+Avec l'introduction du facteur _zap_, l'@eq:relation devient maintenant
 
 $ P = ("Id" - d A_(cal(S))^t)^(-1) (P_(e e) + P_("ind")) $
 
@@ -340,7 +340,7 @@ Bianchini _et al._ @bianchini02pagerank @bianchini03inside montrent que l'effet 
 
 $ sum_(v in V) |P_t (v) - P_(t+1)(v)| <= frac(2d, 1-d) sum_(s in S) P_t (s) $ <eq:bianchini-robust>
 
-Ce résultat peut également se déduire du lemme @lemma:amp : si un site $S$ change entre $t$ et $t+1$, la plus grande variation relative possible est celle où l'on passe de $alpha'(S) = 1$ à $alpha'(S) = frac(1, 1-d)$. Cette modification de la structure du site, qui correspond à la création d'un puits de rang, ne pouvant se faire qu'au détriment du PageRank externe, et donc du PageRank entrant externe, on a alors forcément $P_(e e)_t >= P_(e e)_(t+1)$, d'où une variation d'au plus $frac(d, 1-d) P(S)$. Comme Bianchini _et al._ travaillent ici dans un modèle compensé (la somme des PageRanks est constante), une variation de $frac(d, 1-d) P(S)$ dans $S$ génère la même variation hors de $S$, ce qui nous donne l'inégalité @eq:bianchini-robust.
+Ce résultat peut également se déduire du @lemma:amp : si un site $S$ change entre $t$ et $t+1$, la plus grande variation relative possible est celle où l'on passe de $alpha'(S) = 1$ à $alpha'(S) = frac(1, 1-d)$. Cette modification de la structure du site, qui correspond à la création d'un puits de rang, ne pouvant se faire qu'au détriment du PageRank externe, et donc du PageRank entrant externe, on a alors forcément $P_(e e)_t >= P_(e e)_(t+1)$, d'où une variation d'au plus $frac(d, 1-d) P(S)$. Comme Bianchini _et al._ travaillent ici dans un modèle compensé (la somme des PageRanks est constante), une variation de $frac(d, 1-d) P(S)$ dans $S$ génère la même variation hors de $S$, ce qui nous donne l'inégalité @eq:bianchini-robust.
 
 === Amplification d'une page donnée <ampli-page>
 
@@ -373,7 +373,7 @@ L'objectif de cette section est d'adapter le calcul théorique vu lors de la @pd
 
 Maintenant que nous avons eu le temps de nous familiariser avec les flots induits et dissipés, nous pouvons réécrire les équations vues au cours de @sec:local.
 
-Avec l'introduction du facteur _zap_, @eq:relation, qui décrit le lien entre PageRank entrant externe et PageRank, devient comme nous l'avons vu
+Avec l'introduction du facteur _zap_, l'@eq:relation, qui décrit le lien entre PageRank entrant externe et PageRank, devient comme nous l'avons vu
 
 $ P = ("Id" - d A_(cal(S))^t)^(-1) (P_(e e) + (1-d) Z) $ <eq:relation-zap>
 
@@ -410,14 +410,14 @@ $ <eq:nonc-externe>
 ]
 
 #remarque[
-  L'inégalité $||d A^t M X||_1 <= ||M X||_1$ utilisée dans la preuve du lemme @lemme:conv-nonc-externe est très grossière. Dans la pratique, on peut donc légitimement s'attendre à ce que le rayon spectral de $A_e$ soit plus petit que $1$, et donc que l'@eq:nonc-externe permette de trouver $P_(e e)$ avec une raison de convergence plus petite que $d$. Les résultats présentés par Arasu _et al._ (cf @arasu01pagerank) vont dans ce sens et nous autorisent à espérer une convergence très rapide en pratique.
+  L'inégalité $||d A^t M X||_1 <= ||M X||_1$ utilisée dans la preuve du @lemme:conv-nonc-externe est très grossière. Dans la pratique, on peut donc légitimement s'attendre à ce que le rayon spectral de $A_e$ soit plus petit que $1$, et donc que l'@eq:nonc-externe permette de trouver $P_(e e)$ avec une raison de convergence plus petite que $d$. Les résultats présentés par Arasu _et al._ (cf @arasu01pagerank) vont dans ce sens et nous autorisent à espérer une convergence très rapide en pratique.
 ]
 
 ==== Application : estimation du PageRank d'un site <estimation>
 
-Pour l'administrateur d'un site $S$, pouvoir estimer l'importance de ses pages sans faire appel à une aide extérieure ni chaluter le Web indexable peut être d'un intérêt certain. Par exemple, cette importance pourrait être incorporée à un moteur de recherche interne. Or, d'après @eq:relation-zap, il suffit pour cela d'arriver à estimer le PageRank entrant externe sur $S$.
+Pour l'administrateur d'un site $S$, pouvoir estimer l'importance de ses pages sans faire appel à une aide extérieure ni chaluter le Web indexable peut être d'un intérêt certain. Par exemple, cette importance pourrait être incorporée à un moteur de recherche interne. Or, d'après l'@eq:relation-zap, il suffit pour cela d'arriver à estimer le PageRank entrant externe sur $S$.
 
-En effet, si on définit la fonction $"SpeedRank"(M, X)$, inspirée de l'algorithme @alg:speedrank, comme une fonction qui renvoie, pour $M$ positive de rayon spectral strictement inférieur à $frac(1,d)$ et $X$ positif, le vecteur $P$ vérifiant $P = d M^t P + X$, alors
+En effet, si on définit la fonction $"SpeedRank"(M, X)$, inspirée de l'@alg:speedrank, comme une fonction qui renvoie, pour $M$ positive de rayon spectral strictement inférieur à $frac(1,d)$ et $X$ positif, le vecteur $P$ vérifiant $P = d M^t P + X$, alors
 
 $ P_S = "SpeedRank"(A_S, ((P_(e e))_S + (1-d) Z_S)) $
 
@@ -441,7 +441,7 @@ Nous avons maintenant toutes les données en main pour construire l'algorithme F
 - Une fois calculé $tilde(A)_e$ et $tilde(Z)_e$, il est possible de calculer $tilde(P)_(e e)$, restriction de $P_(e e)$ à $V_("ext")$ : $tilde(P)_(e e) = "SpeedRank"(tilde(A)_e, tilde(Z)_e)$.
 - Le PageRank non-compensé est alors donné par $P = "SpeedRank"(A_(cal(S)), (P_(e e) + (1-d) Z))$. Encore une fois, cette étape peut se faire à l'échelle d'un site.
 
-Toutes ces opérations sont résumées dans l'algorithme @alg:flowrank.
+Toutes ces opérations sont résumées dans l'@alg:flowrank.
 
 #alg(
   caption: [FlowRank : calcul décomposé du PageRank non-compensé],
@@ -490,7 +490,7 @@ Parallèlement à nos travaux sur la structure en blocs des graphes du Web @math
 
 Le principal avantage de BlockRank sur FlowRank est ce passage de $|V_("ext")|$ à $k = |cal(S)|$ rendu possible par les approximations. Ce gain se fait tout autant pour le nombre de calculs locaux que pour la taille de la matrice globale. Nous sommes donc tentés de réduire $tilde(A)_e$ à une matrice $k times k$. Pour cela nous devons réduire l'information de flot externe à un scalaire par site $S$, en remplaçant par exemple $(P_(e e))_S$ par $P_(e e)(S)$. Il nous faut alors définir la façon dont le PageRank entrant externe est injecté à l'intérieur de chaque site. Nous supposerons donc que chaque site $S$ est muni d'une distribution de probabilité qui estime la distribution du PageRank entrant externe. Cette distribution, que nous noterons $D_S$, pourra être la distribution uniforme sur $S$, ou plus finement une distribution sur les pages d'entrée du site, qui sont les plus susceptibles d'être pointées.
 
-Nous pouvons maintenant considérer l'algorithme hybride BlowRank (algorithme @alg:blowrank), qui diffère de FlowRank par une réorganisation imposée du flot externe à l'entrée de chaque site : tout se passe comme si à l'entrée de chaque site, le PageRank entrant externe (par clic) était collecté et redistribué selon $D_S$.
+Nous pouvons maintenant considérer l'algorithme hybride BlowRank (#ref(<alg:blowrank>, supplement: none)), qui diffère de FlowRank par une réorganisation imposée du flot externe à l'entrée de chaque site : tout se passe comme si à l'entrée de chaque site, le PageRank entrant externe (par clic) était collecté et redistribué selon $D_S$.
 
 #alg(
   caption: [BlowRank : approximation à la BlockRank de l'algorithme FlowRank],

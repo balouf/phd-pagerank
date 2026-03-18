@@ -209,7 +209,7 @@ A question to ask is: what are the chances of landing on a given square? If cert
 
 === Brief Reminder of the Rules and Notation
 
-By convention, we consider that there are 41 squares: from the _Go_ square (number 0) to the _Rue de la Paix_ square (number 39), with the _Jail_ square having number 40 and the _Just Visiting_ square having number 10. Table @tab:ListesDesCasesDuMonopoly summarizes the different squares, with the name and possible color group.
+By convention, we consider that there are 41 squares: from the _Go_ square (number 0) to the _Rue de la Paix_ square (number 39), with the _Jail_ square having number 40 and the _Just Visiting_ square having number 10. @tab:ListesDesCasesDuMonopoly summarizes the different squares, with the name and possible color group.
 
 A game begins on the _Go_ square. At each turn, the player rolls two dice. After three consecutive doubles, the player goes to jail. If the player lands on a _Chance_ or _Community Chest_ square, they draw a card from the corresponding pile, and this draw is possibly followed by an immediate effect on their position. When in jail, one can get out for free by rolling doubles within the three turns following imprisonment; otherwise, one must pay to get out. One can also pay to get out before the end of the three turns.
 
@@ -402,7 +402,7 @@ The case of strictly sub-stochastic matrices seems _a priori_ simple to resolve:
 ]
 
 #remarque[
-  Theorem @thm:sousstoch can in fact be applied to any sub-stochastic matrix $A$ that is dominated by and not equal to an irreducible stochastic matrix. We will call such matrices sub-irreducible matrices.
+  @thm:sousstoch can in fact be applied to any sub-stochastic matrix $A$ that is dominated by and not equal to an irreducible stochastic matrix. We will call such matrices sub-irreducible matrices.
 ] <rem:quasireduc>
 
 However, as we will see in @pr-pagerank, the study of the maximal eigenvalue of a sub-irreducible matrix and its associated eigenspace is important for the study of PageRank, which is why we will develop this a bit further.

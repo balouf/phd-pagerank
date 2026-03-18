@@ -103,7 +103,7 @@ Afin d'étudier l'évolution à long terme d'une chaîne de Markov, on peut se d
   + D'après le théorème de Perron-Frobenius, si $lambda$ est une valeur propre de $A$ vérifiant $abs(lambda) = 1$, alors $lambda$ est une racine $d$-ième de l'unité, où $d$ est la cyclicité de $A$. Si $A$ est apériodique, on a alors forcément $lambda = 1$. Toutes les valeurs propres de $A$ autres que $1$ ont donc une norme strictement inférieure à 1.
 ]
 
-D'après @thm:stoch, il est maintenant possible de connaître le comportement asymptotique d'une chaîne de Markov homogène.
+D'après le @thm:stoch, il est maintenant possible de connaître le comportement asymptotique d'une chaîne de Markov homogène.
 
 #Thm[
   Soit $A$ une matrice stochastique irréductible apériodique de taille $n$ représentant une chaîne de Markov homogène. Si on appelle $P$ le vecteur de probabilité propre droit de $A^t$ pour la valeur $1$ (son existence ainsi que son unicité sont garanties par le théorème de Perron-Frobenius), alors
@@ -209,7 +209,7 @@ Une question à se poser est : quelles sont les chances de tomber sur une case d
 
 === Bref rappel des règles et notations
 
-Par convention, on considérera qu'il y a 41 cases : cela va de la case _Départ_ (numéro 0) à la case _Rue de la Paix_ (numéro 39), la case _Prison_ ayant le numéro 40, la case _Simple Visite_ ayant le numéro 10. Le tableau @tab:ListesDesCasesDuMonopoly récapitule les différentes cases, avec le nom et la couleur de lotissement éventuelle.
+Par convention, on considérera qu'il y a 41 cases : cela va de la case _Départ_ (numéro 0) à la case _Rue de la Paix_ (numéro 39), la case _Prison_ ayant le numéro 40, la case _Simple Visite_ ayant le numéro 10. Le @tab:ListesDesCasesDuMonopoly récapitule les différentes cases, avec le nom et la couleur de lotissement éventuelle.
 
 Une partie commence sur la case _Départ_. À chaque tour, le joueur lance deux dés. Au bout de trois doubles consécutifs, le joueur va en prison. S'il tombe sur une case _Chance_ ou bien _Caisse de Communauté_, il tire une carte dans la pile correspondante, et ce tirage est éventuellement suivi d'un effet immédiat au niveau de la position. Quand on est en prison, on peut en sortir gratuitement en faisant un double dans les trois tours qui suivent celui de l'emprisonnement, sinon on doit payer pour sortir. On peut sortir avant la fin des trois tours en payant.
 
@@ -238,7 +238,7 @@ On arrive ainsi à écrire, pour chacune des 2 stratégies considérées, une ma
   caption: [Probabilités asymptotiques du jeu de Monopoly (marque déposée)],
 ) <fig:monopoly-prob>
 
-Une fois la matrice des transitions $A$ calculée, grâce au corollaire @cor:markov-iter, on sait qu'il suffit d'itérer $P_n = A^t P_(n-1)$ ($P_0$ étant par exemple la distribution équiprobable) pour avoir une convergence vers la distribution asymptotique. Il n'y a alors plus qu'à revenir dans l'espace à $40+1$ cases pour avoir des résultats exploitables, lesquels sont représentés @fig:monopoly-prob. Pour compléter cette étude, il faudrait maintenant prendre en compte les prix de vente et les loyers pour avoir un temps moyen de retour sur investissement, sans oublier de considérer le pouvoir d'achat, mais cela n'est plus du ressort des matrices de Markov#footnote[Pour avoir une idée des résultats que l'on obtient, voir @monopoly. Attention, les résultats correspondent au jeu de monopoly international, qui comporte des cartes différentes de la version française.]. Contentons-nous pour conclure de ces quelques remarques :
+Une fois la matrice des transitions $A$ calculée, grâce au @cor:markov-iter, on sait qu'il suffit d'itérer $P_n = A^t P_(n-1)$ ($P_0$ étant par exemple la distribution équiprobable) pour avoir une convergence vers la distribution asymptotique. Il n'y a alors plus qu'à revenir dans l'espace à $40+1$ cases pour avoir des résultats exploitables, lesquels sont représentés @fig:monopoly-prob. Pour compléter cette étude, il faudrait maintenant prendre en compte les prix de vente et les loyers pour avoir un temps moyen de retour sur investissement, sans oublier de considérer le pouvoir d'achat, mais cela n'est plus du ressort des matrices de Markov#footnote[Pour avoir une idée des résultats que l'on obtient, voir @monopoly. Attention, les résultats correspondent au jeu de monopoly international, qui comporte des cartes différentes de la version française.]. Contentons-nous pour conclure de ces quelques remarques :
 
 - La case _Allez en prison_ a une probabilité nulle, puisqu'on n'y reste pas.
 - De même, les cases _Chance_ et _Caisse de Communauté_ ont une probabilité assez faible, à cause des cartes de déplacement immédiat.
@@ -322,7 +322,7 @@ où $T$ est une matrice sous-stochastique, non stochastique, de taille $k_t$, $E
 
   $ T = mat(T_1, G_(1,2), dots, G_(1,l); 0, dots.down, G_(i,j), dots.v; dots.v, dots.down, dots.down, G_(l-1,l); 0, dots, 0, T_l) $
 
-  où les $T_i$ sont des matrices irréductibles sous-stochastiques, non stochastiques (par convention, la matrice unidimensionnelle $0$ est considérée comme irréductible). D'après @markov:patho:sous, chaque matrice $T_i$ de la diagonale principale a un rayon spectral $rho(T_i)$ strictement inférieur à $1$. Comme la structure de $T$ est triangulaire, le rayon spectral de $T$ est $rho(T) = max_(1 <= i <= l) rho(T_i) < 1$. Ceci assure que $T^k$ converge géométriquement vers $0$.
+  où les $T_i$ sont des matrices irréductibles sous-stochastiques, non stochastiques (par convention, la matrice unidimensionnelle $0$ est considérée comme irréductible). D'après la @markov:patho:sous, chaque matrice $T_i$ de la diagonale principale a un rayon spectral $rho(T_i)$ strictement inférieur à $1$. Comme la structure de $T$ est triangulaire, le rayon spectral de $T$ est $rho(T) = max_(1 <= i <= l) rho(T_i) < 1$. Ceci assure que $T^k$ converge géométriquement vers $0$.
 
   Comme $1$ n'est pas valeur propre de $T$, $(I d_(k_t) - T)$ est inversible. Or, pour tout $k$, on a :
 
@@ -402,7 +402,7 @@ Le cas des matrices strictement sous-stochastiques semble _a priori_ simple à r
 ]
 
 #remarque[
-  Le théorème @thm:sousstoch peut en fait s'appliquer à toute matrice sous-stochastique $A$ inférieure et non égale à une matrice stochastique irréductible. Nous appellerons de telles matrices des matrices sous-irréductibles.
+  Le @thm:sousstoch peut en fait s'appliquer à toute matrice sous-stochastique $A$ inférieure et non égale à une matrice stochastique irréductible. Nous appellerons de telles matrices des matrices sous-irréductibles.
 ] <rem:quasireduc>
 
 Cependant, comme nous le verrons au @pr-pagerank, l'étude de la valeur propre maximale d'une matrice sous-irréductible ainsi que de l'espace propre associé est importante pour l'étude du PageRank, c'est pourquoi nous allons développer un peu.
