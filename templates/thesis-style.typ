@@ -2,7 +2,7 @@
 // Thesis Style - Style de thèse Université Montpellier II
 // =============================================================================
 
-#import "i18n.typ": lang, t, _is-html, _appendix-state, reset-chapter-counters
+#import "i18n.typ": lang, t, _appendix-state, reset-chapter-counters
 #import "meta-data.typ": *
 
 // -----------------------------------------------------------------------------

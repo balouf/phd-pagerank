@@ -6,12 +6,11 @@
 // Site complet (deux langues, PDF, index de recherche) :
 //   uv run web/build.py
 // Une langue à la main :
-//   typst compile --features html,bundle --format bundle --input lang=fr --input html=true \
-//     main-html.typ web/dist/fr
+//   typst compile --features html,bundle --format bundle --input lang=fr main-html.typ web/dist/fr
 //
-// Les chapitres sont les mêmes fichiers que dans main.typ. Ce qui diffère est
-// ici : pas de mise en page (thesis-layout), la couche web à la place
-// (templates/web/web.typ, copie vendorisée de typst-thesis-web), et un
+// Les chapitres et les environnements sont les mêmes que dans main.typ. Ce qui
+// diffère est ici : pas de mise en page (thesis-layout), la couche web à la
+// place (templates/web/web.typ, copie vendorisée de typst-thesis-web), et un
 // `chapter(...)` par page du site.
 // =============================================================================
 
@@ -53,7 +52,7 @@
 )
 
 // Les compteurs repartent à chaque chapitre (en PDF, thesis-layout s'en charge).
-#show heading.where(level: 1): it => it + reset-chapter-counters(include-theorems: true)
+#show heading.where(level: 1): it => it + reset-chapter-counters()
 
 // -----------------------------------------------------------------------------
 // Site
@@ -69,7 +68,6 @@
   repo: "https://github.com/balouf/phd-pagerank",
   other-lang: t("en", "fr"),
   favicon: "assets/favicon.svg",
-  css: read("web/assets/thesis.css"),
 )
 #let chapter = page.with(site: site)
 

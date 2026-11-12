@@ -232,9 +232,10 @@
 
 /// Figures.
 /// - A figure whose kind is a string and that has no caption is a theorem-like
-///   statement: `<div class="env env-KIND env-SUPPLEMENT">`. So is any figure
-///   whose kind is in `env-kinds`, caption or not (ctheorems stores the name of
-///   a theorem in the caption and prints it itself).
+///   statement: `<div class="env env-KIND env-SUPPLEMENT">`, plus `env-plain`
+///   when it is not numbered (a proof). So is any figure whose kind is in
+///   `env-kinds`, caption or not (ctheorems stores the name of a theorem in the
+///   caption and prints it itself).
 /// - Kinds listed in `frame-kinds` are rendered as SVG, with their caption.
 /// - Everything else stays a `<figure>`; a drawing that contains no image is
 ///   framed as a whole.
@@ -258,6 +259,7 @@
       let classes = ("env", "env-" + _slug(kind))
       let supplement = _slug(_text(it.supplement))
       if supplement != "" and "env-" + supplement not in classes { classes.push("env-" + supplement) }
+      if it.numbering == none { classes.push("env-plain") }
       return html.elem("div", attrs: (class: classes.join(" "), .._anchor(it)), it.body)
     }
     if it.kind == image and not _contains(it.body, c => c.func() == image) { to-frame = true }

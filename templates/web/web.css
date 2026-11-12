@@ -197,7 +197,7 @@ figcaption { font-size: 0.9em; color: var(--color-text-muted); margin-top: 0.5em
   padding-left: 1em;
   border-left: 3px solid var(--color-border-strong);
 }
-.env:has(> .box) { padding-left: 0; border-left: none; }
+.env:has(> .box), .env-plain { padding-left: 0; border-left: none; }
 
 .box {
   margin: 1em 0;
@@ -557,8 +557,9 @@ body:has(> header.topbar) > section[role="doc-endnotes"] { grid-area: notes; }
 .btn-pdf:hover { background: var(--color-link); color: var(--color-bg); text-decoration: none; }
 
 /* Epigraph and drop cap, for templates that tag them */
-.epigraph { width: 55%; margin: 1em 0 1.5em auto; font-style: italic; font-size: 0.95em; }
+.epigraph { width: 55%; margin: 1em 0 1.5em auto; padding: 0; border-left: none; color: inherit; font-style: italic; font-size: 0.95em; }
 .epigraph .epigraph-author { text-align: right; font-style: normal; margin-top: 0.3em; }
+.epigraph .epigraph-author::before { content: "— "; }
 .lettrine::first-letter { font-size: 2.5em; float: left; line-height: 1; margin-right: 2px; }
 .qed { display: block; text-align: right; }
 

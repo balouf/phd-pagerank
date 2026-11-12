@@ -28,8 +28,6 @@ DIST = ROOT / "web" / "dist"
 # name of the PDF, which chapters/cover.typ links to.
 LANGS = ["fr", "en"]
 PDF_NAME = "thesis-{lang}.pdf"
-# templates/environments.typ still picks its HTML variants from this input.
-SITE_INPUTS = ["html=true"]
 
 # Typst says this on every web compilation.
 NOISE = ("html export is under active development", "bundle export is experimental")
@@ -55,8 +53,7 @@ def build_site(lang: str) -> None:
     # Typst never removes files from a bundle directory: a renamed chapter
     # would leave its old page behind.
     shutil.rmtree(out, ignore_errors=True)
-    inputs = [x for pair in [f"lang={lang}", *SITE_INPUTS] for x in ("--input", pair)]
-    typst("--features", "html,bundle", "--format", "bundle", *inputs, "main-html.typ", str(out))
+    typst("--features", "html,bundle", "--format", "bundle", "--input", f"lang={lang}", "main-html.typ", str(out))
     pages = list(out.rglob("*.html"))
     print(f"  {lang}: {len(pages)} pages, {sum(p.stat().st_size for p in pages) // 1024} KiB")
 
