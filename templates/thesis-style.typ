@@ -138,7 +138,14 @@ for member in thesis-jury {
 // Configuration générale du document
 // -----------------------------------------------------------------------------
 
-#let thesis-style(doc) = {
+// Le style est en deux moitiés, parce que l'édition web (main-html.typ) applique
+// la seconde et jamais la première :
+//   thesis-layout  : l'allure du PDF (page, fontes, typographie des titres). L'export
+//                    HTML supprime ces éléments de mise en page avec leur contenu ;
+//   thesis-content : ce que le document signifie (langue, numérotation, renvois).
+// thesis-style applique les deux, pour le PDF.
+
+#let thesis-layout(doc) = {
   // Configuration de la page
   set page(
     paper: "a4",
@@ -183,8 +190,6 @@ for member in thesis-jury {
   set text(
     font: "New Computer Modern",
     size: 12pt,
-    lang: t("fr", "en"),
-    region: t("FR", "US"),
   )
 
   // Configuration des paragraphes
@@ -193,32 +198,6 @@ for member in thesis-jury {
     leading: 0.65em,
     first-line-indent: 1.5em,
   )
-
-  // Configuration des titres
-  set heading(numbering: "1.1", supplement: [Section])
-
-  // Références vers headings level 1 : "Chapitre X" ou "Annexe A" selon le contexte
-  // On ne touche pas aux refs avec form: "page" (utilisées par fref pour "page YY")
-  show ref: it => context {
-    if it.form == "page" { return it }
-    let els = query(it.target)
-    if els.len() > 0 {
-      let el = els.first()
-      if el.func() == heading and el.level == 1 and el.numbering != none {
-        let loc = el.location()
-        let nums = counter(heading).at(loc)
-        let is-appendix = _appendix-state.at(loc)
-        let supp = if is-appendix { t([Annexe], [Appendix]) } else { t([Chapitre], [Chapter]) }
-        let num-fmt = if is-appendix { "A" } else { "1" }
-        link(loc, [#supp #numbering(num-fmt, nums.first())])
-      } else {
-        it
-      }
-    } else {
-      it
-    }
-  }
-
 
   // Style des titres (tous niveaux)
   show heading: it => context {
@@ -262,12 +241,7 @@ for member in thesis-jury {
   set figure(
     placement: auto,
     gap: 1em,
-    numbering: (..args) => [#counter(heading).get().at(0).#args.at(0)]
   )
-
-  // Différencier les suppléments selon le type de contenu
-  show figure.where(kind: image): set figure(supplement: [Figure])
-  show figure.where(kind: table): set figure(supplement: t([Tableau], [Table]))
 
   show figure.caption: it => {
     set text(size: 0.9em)
@@ -275,6 +249,50 @@ for member in thesis-jury {
     set par(justify: true)
     it
   }
+
+  doc
+}
+
+#let thesis-content(doc) = {
+  // Langue du texte
+  set text(
+    lang: t("fr", "en"),
+    region: t("FR", "US"),
+  )
+
+  // Configuration des titres
+  set heading(numbering: "1.1", supplement: [Section])
+
+  // Références vers headings level 1 : "Chapitre X" ou "Annexe A" selon le contexte
+  // On ne touche pas aux refs avec form: "page" (utilisées par fref pour "page YY")
+  show ref: it => context {
+    if it.form == "page" { return it }
+    let els = query(it.target)
+    if els.len() > 0 {
+      let el = els.first()
+      if el.func() == heading and el.level == 1 and el.numbering != none {
+        let loc = el.location()
+        let nums = counter(heading).at(loc)
+        let is-appendix = _appendix-state.at(loc)
+        let supp = if is-appendix { t([Annexe], [Appendix]) } else { t([Chapitre], [Chapter]) }
+        let num-fmt = if is-appendix { "A" } else { "1" }
+        link(loc, [#supp #numbering(num-fmt, nums.first())])
+      } else {
+        it
+      }
+    } else {
+      it
+    }
+  }
+
+  // Numérotation des figures par chapitre
+  set figure(
+    numbering: (..args) => [#counter(heading).get().at(0).#args.at(0)]
+  )
+
+  // Différencier les suppléments selon le type de contenu
+  show figure.where(kind: image): set figure(supplement: [Figure])
+  show figure.where(kind: table): set figure(supplement: t([Tableau], [Table]))
 
   // Configuration des équations
   set math.equation(numbering: (..args) => [(#counter(heading).get().at(0).#args.at(0))])
@@ -285,6 +303,12 @@ for member in thesis-jury {
   // Guillemets français
   set smartquote(enabled: true)
 
+  doc
+}
+
+#let thesis-style(doc) = {
+  show: thesis-layout
+  show: thesis-content
   doc
 }
 
