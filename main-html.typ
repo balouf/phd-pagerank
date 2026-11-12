@@ -38,6 +38,10 @@
 #show: thesis-content
 #show: thmrules
 
+// Police du PDF : en HTML elle ne sert qu'à l'intérieur des cadres SVG (grilles
+// de figures, algorithmes, diagrammes), le texte courant suit la feuille de style.
+#set text(font: "New Computer Modern", size: 12pt)
+
 // Préfixe des titres : « Chapitre 3 — », « Annexe A — », puis « 3.1 ».
 #let numero-titre(it, n) = {
   if it.level == 1 {
