@@ -26,8 +26,6 @@
 // Appliquer le style de thèse
 #show: thesis-style
 
-// Note: les refs aux algorithmes utilisent #algref() car @alg: cause des problèmes avec ctheorems
-
 // Configurer les théorèmes
 #show: thmrules
 
