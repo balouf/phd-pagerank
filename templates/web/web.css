@@ -28,7 +28,7 @@
   --color-search-bg: #fff;
   --color-backdrop: rgba(0, 0, 0, 0.4);
   /* Share of the Typst fill in a box background: all of it on a light page,
-     none on a dark one, where a tint of the stroke colour is used instead. */
+     none on a dark one, where a tint of the stroke color is used instead. */
   --box-fill-share: 100%;
   /* SVG frames are drawn black on transparent. */
   --frame-filter: none;
@@ -152,7 +152,7 @@ math { font-family: var(--font-math); }
 math[display="block"] { display: block math; margin: 1em 0; overflow-x: auto; overflow-y: hidden; }
 
 /* Numbered block equation: <div class="eq"><math/><div class="eq-num"/></div>.
-   Both share one grid cell: the equation is centred on the full width and the
+   Both share one grid cell: the equation is centered on the full width and the
    number sits on the right, as in print. No track sizing is involved, which
    browsers resolve differently for block math. */
 .eq { display: grid; align-items: center; margin: 1em 0; }
@@ -188,7 +188,7 @@ figcaption { font-size: 0.9em; color: var(--color-text-muted); margin-top: 0.5em
 /* ---------------------------------------------------------------------------
    Theorem-like statements and boxes
    .env  : a figure with a string kind and no caption (class env-KIND)
-   .box  : a Typst block with a fill or a stroke; colours come from Typst as
+   .box  : a Typst block with a fill or a stroke; colors come from Typst as
            --box-fill / --box-stroke; a dark page tints with the stroke
    --------------------------------------------------------------------------- */
 
@@ -397,7 +397,7 @@ html:has(> body > header.topbar) { scroll-padding-top: calc(var(--topbar-height)
   text-decoration: none;
 }
 
-/* Icons are CSS masks: no markup, no script, they follow the text colour. */
+/* Icons are CSS masks: no markup, no script, they follow the text color. */
 .sidebar-toggle-btn::before, .theme-toggle::before, .github-link::before, .search-trigger::before {
   content: "";
   display: inline-block;

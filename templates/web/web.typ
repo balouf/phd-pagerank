@@ -55,8 +55,6 @@
   })
 } else { body }
 
-#let _space = [ ].func()
-
 #let _children(c) = {
   let out = ()
   for (_, v) in c.fields() {
@@ -161,7 +159,7 @@
 
 /// What has no HTML equivalent is rendered as SVG: grids, shapes, transforms,
 /// `layout` callbacks (fletcher, droplet) and fixed-size blocks/boxes (cetz).
-/// Coloured blocks hand their colours to the stylesheet as CSS variables.
+/// Colored blocks hand their colors to the stylesheet as CSS variables.
 #let frame-rules(width: 45em, body) = {
   let framed(it) = on-web(it, it => frame(it, width: width))
   show grid: framed
@@ -428,6 +426,9 @@
   })
 }
 
+// `article` has a parameter named `toc`.
+#let _toc = toc
+
 /// Front matter and shell of a self-contained article page. In PDF it returns
 /// `body` unchanged.
 ///
@@ -438,7 +439,6 @@
 ///   (supplementary material, funding, acknowledgements, ...).
 /// - toc: `true`, `false`, or the depth of the table of contents.
 /// - css: `auto` inlines web.css; a string replaces it; `none` emits nothing.
-#let _toc = toc
 #let article(
   title: none,
   authors: (),
@@ -630,11 +630,10 @@
     } else { body }
   }
   context if target() == "bundle" {
-    let name = if title != none { title } else { none }
     let site-title = site.at("title", default: none)
     document(
       path,
-      title: if name != none and site-title != none [#plain(name) — #site-title] else if name != none { plain(name) } else { site-title },
+      title: if title != none and site-title != none [#plain(title) — #site-title] else if title != none { plain(title) } else { site-title },
       inner,
     )
   } else if target() == "html" {
