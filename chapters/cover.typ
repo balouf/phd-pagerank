@@ -30,9 +30,13 @@
   #html.elem("div", attrs: (class: "abstract"))[
     #t(french-abstract, english-abstract)
   ]
-  #html.elem("p", attrs: (class: "pdf-download"))[
+  // `web-only` keeps the download links out of the EPUB.
+  #html.elem("p", attrs: (class: "pdf-download web-only"))[
     #html.elem("a", attrs: (href: t("../pdf/thesis-fr.pdf", "../pdf/thesis-en.pdf"), class: "btn-pdf"))[
       #t([📄 Télécharger le PDF], [📄 Download PDF])
+    ]
+    #html.elem("a", attrs: (href: t("../epub/thesis-fr.epub", "../epub/thesis-en.epub"), class: "btn-pdf"))[
+      #t([📖 Télécharger l'EPUB], [📖 Download EPUB])
     ]
   ]
 ]

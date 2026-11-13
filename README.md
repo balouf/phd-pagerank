@@ -20,11 +20,12 @@ Available as a bilingual (French/English) website with search, dark mode, and PD
 uv run web/build.py
 ```
 
-This compiles both language versions (HTML + PDF), generates the static site in `web/dist/`, and builds the search index.
+This compiles both language versions (HTML, PDF and EPUB), generates the static site in `web/dist/`, and builds the search index.
 
 Options:
 - `--lang fr` — build one language only (repeatable)
 - `--skip-pdf` — skip PDF compilation
+- `--skip-epub` — skip the EPUB edition
 - `--skip-search` — skip Pagefind indexing
 
 The web edition relies on the layer in `templates/web/`, a vendored copy from [typst-thesis-web](https://github.com/balouf/typst-thesis-web), where the method is documented.
