@@ -53,6 +53,7 @@
 #show: web-rules.with(
   heading-offset: 0, // le titre d'un chapitre est le <h1> de sa page
   heading-number: numero-titre,
+  frame-kinds: (), // les algorithmes sont du texte, pas des dessins (templates/algorithms.typ)
 )
 
 // Les compteurs repartent à chaque chapitre (en PDF, thesis-layout s'en charge).
